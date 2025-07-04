@@ -20,7 +20,7 @@ const CertificateVerify = () => {
       course: 'Digital Computer Application',
       issueDate: '2024-01-15'
     },
-    'JASPREET002': {
+    '001': {
       name: 'JASPREET KAUR',
       pdfPath: '/certificates/JASPREET KAUR.pdf',
       course: 'Digital Computer Application',
