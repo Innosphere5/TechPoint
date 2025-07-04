@@ -101,15 +101,27 @@ const CertificateVerify = () => {
     }, 2000);
   };
 
-  const handleDownload = () => {
+  const handleDownload = async () => {
     if (certificateData) {
-      const link = document.createElement('a');
-      link.href = certificateData.pdfPath;
-      link.download = `${certificateData.name}_Certificate.pdf`;
-      link.target = '_blank';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      try {
+        // First check if the file exists
+        const response = await fetch(certificateData.pdfPath);
+        if (!response.ok) {
+          throw new Error('Certificate file not found');
+        }
+
+        // Create download link
+        const link = document.createElement('a');
+        link.href = certificateData.pdfPath;
+        link.download = `${certificateData.name.replace(/\s+/g, '_')}_Certificate.pdf`;
+        link.target = '_blank';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } catch (error) {
+        console.error('Download failed:', error);
+        alert('Failed to download certificate. Please try again.');
+      }
     }
   };
 
@@ -257,10 +269,17 @@ const CertificateVerify = () => {
                       <span className="text-lg font-semibold text-gray-700">Certificate Preview</span>
                     </div>
                     <iframe
-                      src={certificateData?.pdfPath}
+                      src={`${certificateData?.pdfPath}#toolbar=0`}
                       className="w-full h-96 border rounded-lg"
                       title="Certificate Preview"
+                      onError={(e) => {
+                        console.error('PDF preview failed to load');
+                        e.target.style.display = 'none';
+                      }}
                     />
+                    <div className="mt-4 text-center text-sm text-gray-600">
+                      <p>If the preview doesn't load, you can still download the certificate using the button below.</p>
+                    </div>
                   </div>
 
                   {/* Action Buttons */}
