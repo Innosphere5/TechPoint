@@ -1,7 +1,7 @@
+
 "use client"
 import React, { useState, useEffect } from 'react';
-import { CheckCircle, Shield, Award, Sparkles, Lock, Search } from 'lucide-react';
-
+import { CheckCircle, Shield, Award, Sparkles, Lock, Search, Download, FileText, AlertCircle } from 'lucide-react';
 
 const CertificateVerify = () => {
   const [registrationNumber, setRegistrationNumber] = useState('');
@@ -9,6 +9,54 @@ const CertificateVerify = () => {
   const [isVerified, setIsVerified] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [particles, setParticles] = useState([]);
+  const [certificateData, setCertificateData] = useState(null);
+  const [error, setError] = useState('');
+
+  // Certificate database mapping registration numbers to PDF files
+  const certificateDatabase = {
+    'GURWINDER001': {
+      name: 'GURWINDER',
+      pdfPath: '/certificates/GURWINDER.pdf',
+      course: 'Digital Computer Application',
+      issueDate: '2024-01-15'
+    },
+    'JASPREET002': {
+      name: 'JASPREET KAUR',
+      pdfPath: '/certificates/JASPREET KAUR.pdf',
+      course: 'Digital Computer Application',
+      issueDate: '2024-01-20'
+    },
+    'KAJALPREET003': {
+      name: 'KAJALPREET KAUR',
+      pdfPath: '/certificates/KAJALPREET KAUR DCA.pdf',
+      course: 'Digital Computer Application',
+      issueDate: '2024-02-10'
+    },
+    'KARMANJOT004': {
+      name: 'KARMANJOT',
+      pdfPath: '/certificates/KARMANJOT.pdf',
+      course: 'Digital Computer Application',
+      issueDate: '2024-02-15'
+    },
+    'SPOKEN005': {
+      name: 'SPOKEN ENGLISH STUDENT',
+      pdfPath: '/certificates/SPOKEN.pdf',
+      course: 'Spoken English',
+      issueDate: '2024-03-01'
+    },
+    'YASHKARAN006': {
+      name: 'YASHKARAN',
+      pdfPath: '/certificates/YASHKARAN1.pdf',
+      course: 'Digital Computer Application',
+      issueDate: '2024-03-10'
+    },
+    'TEACHING007': {
+      name: 'TEACHING EXPERIENCE',
+      pdfPath: '/certificates/teaching experience cert - Copy.pdf',
+      course: 'Teaching Experience Certificate',
+      issueDate: '2024-03-15'
+    }
+  };
 
   // Generate floating particles for background animation
   useEffect(() => {
@@ -33,106 +81,207 @@ const CertificateVerify = () => {
 
     setIsVerifying(true);
     setShowSuccess(false);
+    setError('');
+    setCertificateData(null);
 
     // Simulate verification process
     setTimeout(() => {
       setIsVerifying(false);
-      setIsVerified(true);
-      setShowSuccess(true);
-
-      // Reset after 3 seconds
-      setTimeout(() => {
-        setShowSuccess(false);
+      
+      const certificate = certificateDatabase[registrationNumber.toUpperCase()];
+      
+      if (certificate) {
+        setCertificateData(certificate);
+        setIsVerified(true);
+        setShowSuccess(true);
+      } else {
+        setError('Certificate not found. Please check your registration number.');
         setIsVerified(false);
-      }, 3000);
+      }
     }, 2000);
+  };
+
+  const handleDownload = () => {
+    if (certificateData) {
+      const link = document.createElement('a');
+      link.href = certificateData.pdfPath;
+      link.download = `${certificateData.name}_Certificate.pdf`;
+      link.target = '_blank';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  };
+
+  const handleReset = () => {
+    setRegistrationNumber('');
+    setIsVerified(false);
+    setShowSuccess(false);
+    setCertificateData(null);
+    setError('');
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 relative overflow-hidden">
-    
-      {/* Floating geometric shapes */}
-    
       {/* Main Content */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4">
-      
-
         {/* Main Card */}
-        <div className="w-full max-w-md mx-4">
+        <div className="w-full max-w-2xl mx-4">
           <div className="relative group">
             {/* Card Glow Effect */}
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
 
             {/* Main Card */}
             <div className="relative bg-white rounded-3xl shadow-2xl p-8 transform hover:scale-105 transition-all duration-300">
-              {/* Certificate Icon */}
-              <div className="text-center mb-8">
-                <div className="relative inline-block">
-                  <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-6 shadow-lg">
+              {!showSuccess ? (
+                <>
+                  {/* Certificate Icon */}
+                  <div className="text-center mb-8">
+                    <div className="relative inline-block">
+                      <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-6 shadow-lg">
+                        <div className="relative">
+                          <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl p-4 shadow-lg">
+                            <CheckCircle className="w-8 h-8 text-white" />
+                          </div>
+                          <div className="absolute -top-1 -right-1 bg-green-400 rounded-full w-6 h-6 flex items-center justify-center">
+                            <div className="w-2 h-2 bg-white rounded-full"></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Floating elements */}
+                      <div className="absolute -top-2 left-12 w-3 h-3 bg-blue-400 rounded-full animate-bounce opacity-60"></div>
+                      <div className="absolute -bottom-2 right-12 w-2 h-2 bg-purple-400 rounded-full animate-bounce opacity-60" style={{ animationDelay: '0.5s' }}></div>
+                    </div>
+                  </div>
+
+                  {/* Form */}
+                  <div className="space-y-6">
                     <div className="relative">
-                      <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl p-4 shadow-lg">
-                        <CheckCircle className="w-8 h-8 text-white" />
-                      </div>
-                      <div className="absolute -top-1 -right-1 bg-green-400 rounded-full w-6 h-6 flex items-center justify-center">
-                        <div className="w-2 h-2 bg-white rounded-full"></div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-3">
+                        Registration Number
+                      </label>
+                      <div className="relative group">
+                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl blur opacity-20 group-hover:opacity-30 transition duration-300"></div>
+                        <input
+                          type="text"
+                          value={registrationNumber}
+                          onChange={(e) => setRegistrationNumber(e.target.value)}
+                          placeholder="Enter your certificate number (e.g., GURWINDER001)"
+                          className="relative w-full px-6 py-4 bg-gray-50 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-blue-500 focus:bg-white transition-all duration-300 text-gray-700 placeholder-gray-400"
+                          disabled={isVerifying}
+                        />
+                        <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
+                          <Lock className="w-5 h-5 text-gray-400" />
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Floating elements */}
-                  <div className="absolute -top-2 left-12 w-3 h-3 bg-blue-400 rounded-full animate-bounce opacity-60"></div>
-                  <div className="absolute -bottom-2 right-12 w-2 h-2 bg-purple-400 rounded-full animate-bounce opacity-60" style={{ animationDelay: '0.5s' }}></div>
-                </div>
-              </div>
-
-              {/* Form */}
-              <div className="space-y-6">
-                <div className="relative">
-                  <label className="block text-sm font-semibold text-gray-700 mb-3">
-                    Registration Number
-                  </label>
-                  <div className="relative group">
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl blur opacity-20 group-hover:opacity-30 transition duration-300"></div>
-                    <input
-                      type="text"
-                      value={registrationNumber}
-                      onChange={(e) => setRegistrationNumber(e.target.value)}
-                      placeholder="Enter your certificate number"
-                      className="relative w-full px-6 py-4 bg-gray-50 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-blue-500 focus:bg-white transition-all duration-300 text-gray-700 placeholder-gray-400"
-                      disabled={isVerifying}
-                    />
-                    <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
-                      <Lock className="w-5 h-5 text-gray-400" />
-                    </div>
-                  </div>
-                </div>
-
-                <button
-                  onClick={handleVerify}
-                  disabled={!registrationNumber.trim() || isVerifying}
-                  className="w-full relative overflow-hidden group"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl opacity-100 group-hover:opacity-90 transition duration-300"></div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl opacity-0 group-hover:opacity-100 transition duration-300"></div>
-
-                  <div className="relative px-8 py-4 text-white font-semibold text-lg rounded-xl flex items-center justify-center space-x-3 transform group-hover:scale-105 transition-transform duration-200">
-                    {isVerifying ? (
-                      <>
-                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                        <span>Verifying...</span>
-                      </>
-                    ) : (
-                      <>
-                        <Search className="w-5 h-5" />
-                        <span>Verify</span>
-                      </>
+                    {/* Error Message */}
+                    {error && (
+                      <div className="flex items-center space-x-2 bg-red-50 border border-red-200 rounded-xl p-4">
+                        <AlertCircle className="w-5 h-5 text-red-500" />
+                        <span className="text-red-700 text-sm font-medium">{error}</span>
+                      </div>
                     )}
+
+                    <button
+                      onClick={handleVerify}
+                      disabled={!registrationNumber.trim() || isVerifying}
+                      className="w-full relative overflow-hidden group"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl opacity-100 group-hover:opacity-90 transition duration-300"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl opacity-0 group-hover:opacity-100 transition duration-300"></div>
+
+                      <div className="relative px-8 py-4 text-white font-semibold text-lg rounded-xl flex items-center justify-center space-x-3 transform group-hover:scale-105 transition-transform duration-200">
+                        {isVerifying ? (
+                          <>
+                            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                            <span>Verifying...</span>
+                          </>
+                        ) : (
+                          <>
+                            <Search className="w-5 h-5" />
+                            <span>Verify Certificate</span>
+                          </>
+                        )}
+                      </div>
+
+                      {/* Button shine effect */}
+                      <div className="absolute inset-0 -top-1 -left-1 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20 transform -skew-x-12 transition-all duration-700 group-hover:translate-x-full"></div>
+                    </button>
+                  </div>
+                </>
+              ) : (
+                /* Certificate Display */
+                <div className="text-center space-y-6">
+                  {/* Success Icon */}
+                  <div className="relative inline-block mb-6">
+                    <div className="bg-green-100 rounded-full p-6">
+                      <CheckCircle className="w-16 h-16 text-green-600" />
+                    </div>
+                    <div className="absolute -top-2 -right-2 bg-blue-500 rounded-full p-2">
+                      <Award className="w-6 h-6 text-white" />
+                    </div>
                   </div>
 
-                  {/* Button shine effect */}
-                  <div className="absolute inset-0 -top-1 -left-1 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20 transform -skew-x-12 transition-all duration-700 group-hover:translate-x-full"></div>
-                </button>
-              </div>
+                  {/* Certificate Info */}
+                  <div className="space-y-4">
+                    <h2 className="text-2xl font-bold text-gray-800">Certificate Verified!</h2>
+                    <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-6 border border-green-200">
+                      <div className="space-y-3 text-left">
+                        <div className="flex justify-between items-center">
+                          <span className="text-gray-600 font-medium">Student Name:</span>
+                          <span className="text-gray-800 font-bold">{certificateData?.name}</span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className="text-gray-600 font-medium">Course:</span>
+                          <span className="text-gray-800 font-bold">{certificateData?.course}</span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className="text-gray-600 font-medium">Issue Date:</span>
+                          <span className="text-gray-800 font-bold">{certificateData?.issueDate}</span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className="text-gray-600 font-medium">Registration No:</span>
+                          <span className="text-gray-800 font-bold">{registrationNumber.toUpperCase()}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Certificate Preview */}
+                  <div className="bg-gray-50 rounded-xl p-6 border-2 border-dashed border-gray-300">
+                    <div className="flex items-center justify-center space-x-3 mb-4">
+                      <FileText className="w-8 h-8 text-blue-600" />
+                      <span className="text-lg font-semibold text-gray-700">Certificate Preview</span>
+                    </div>
+                    <iframe
+                      src={certificateData?.pdfPath}
+                      className="w-full h-96 border rounded-lg"
+                      title="Certificate Preview"
+                    />
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="flex flex-col sm:flex-row gap-4 mt-8">
+                    <button
+                      onClick={handleDownload}
+                      className="flex-1 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-6 py-3 rounded-xl font-semibold flex items-center justify-center space-x-2 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    >
+                      <Download className="w-5 h-5" />
+                      <span>Download Certificate</span>
+                    </button>
+                    
+                    <button
+                      onClick={handleReset}
+                      className="flex-1 border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105"
+                    >
+                      Verify Another
+                    </button>
+                  </div>
+                </div>
+              )}
 
               {/* Security Badge */}
               <div className="mt-8 text-center">
@@ -145,9 +294,19 @@ const CertificateVerify = () => {
           </div>
         </div>
 
-        {/* Features */}
-       
-        
+        {/* Valid Registration Numbers Info */}
+        {!showSuccess && (
+          <div className="mt-8 bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg max-w-2xl w-full">
+            <h3 className="text-lg font-semibold text-gray-800 mb-4">Sample Registration Numbers:</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+              {Object.keys(certificateDatabase).map((regNo) => (
+                <div key={regNo} className="bg-blue-50 text-blue-700 px-3 py-2 rounded-lg font-mono text-center">
+                  {regNo}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Custom Styles */}
