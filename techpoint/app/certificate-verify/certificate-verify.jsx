@@ -1,7 +1,7 @@
-
 "use client"
 import React, { useState, useEffect } from 'react';
 import { CheckCircle, Shield, Award, Sparkles, Lock, Search, Download, FileText, AlertCircle } from 'lucide-react';
+import { verifyCertificate, getAllRegistrationNumbers, downloadCertificate } from './certificateData';
 
 const CertificateVerify = () => {
   const [registrationNumber, setRegistrationNumber] = useState('');
@@ -11,52 +11,6 @@ const CertificateVerify = () => {
   const [particles, setParticles] = useState([]);
   const [certificateData, setCertificateData] = useState(null);
   const [error, setError] = useState('');
-
-  // Certificate database mapping registration numbers to PDF files
-  const certificateDatabase = {
-    'GURWINDER001': {
-      name: 'GURWINDER',
-      pdfPath: '/certificates/GURWINDER.pdf',
-      course: 'Digital Computer Application',
-      issueDate: '2024-01-15'
-    },
-    '001': {
-      name: 'JASPREET KAUR',
-      pdfPath: '/certificates/JASPREET KAUR.pdf',
-      course: 'Digital Computer Application',
-      issueDate: '2024-01-20'
-    },
-    'KAJALPREET003': {
-      name: 'KAJALPREET KAUR',
-      pdfPath: '/certificates/KAJALPREET KAUR DCA.pdf',
-      course: 'Digital Computer Application',
-      issueDate: '2024-02-10'
-    },
-    'KARMANJOT004': {
-      name: 'KARMANJOT',
-      pdfPath: '/certificates/KARMANJOT.pdf',
-      course: 'Digital Computer Application',
-      issueDate: '2024-02-15'
-    },
-    'SPOKEN005': {
-      name: 'SPOKEN ENGLISH STUDENT',
-      pdfPath: '/certificates/SPOKEN.pdf',
-      course: 'Spoken English',
-      issueDate: '2024-03-01'
-    },
-    'YASHKARAN006': {
-      name: 'YASHKARAN',
-      pdfPath: '/certificates/YASHKARAN1.pdf',
-      course: 'Digital Computer Application',
-      issueDate: '2024-03-10'
-    },
-    'TEACHING007': {
-      name: 'TEACHING EXPERIENCE',
-      pdfPath: '/certificates/teaching experience cert - Copy.pdf',
-      course: 'Teaching Experience Certificate',
-      issueDate: '2024-03-15'
-    }
-  };
 
   // Generate floating particles for background animation
   useEffect(() => {
@@ -87,9 +41,9 @@ const CertificateVerify = () => {
     // Simulate verification process
     setTimeout(() => {
       setIsVerifying(false);
-      
-      const certificate = certificateDatabase[registrationNumber.toUpperCase()];
-      
+
+      const certificate = verifyCertificate(registrationNumber);
+
       if (certificate) {
         setCertificateData(certificate);
         setIsVerified(true);
@@ -104,23 +58,9 @@ const CertificateVerify = () => {
   const handleDownload = async () => {
     if (certificateData) {
       try {
-        // First check if the file exists
-        const response = await fetch(certificateData.pdfPath);
-        if (!response.ok) {
-          throw new Error('Certificate file not found');
-        }
-
-        // Create download link
-        const link = document.createElement('a');
-        link.href = certificateData.pdfPath;
-        link.download = `${certificateData.name.replace(/\s+/g, '_')}_Certificate.pdf`;
-        link.target = '_blank';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        await downloadCertificate(certificateData);
       } catch (error) {
-        console.error('Download failed:', error);
-        alert('Failed to download certificate. Please try again.');
+        alert(error.message);
       }
     }
   };
@@ -291,7 +231,7 @@ const CertificateVerify = () => {
                       <Download className="w-5 h-5" />
                       <span>Download Certificate</span>
                     </button>
-                    
+
                     <button
                       onClick={handleReset}
                       className="flex-1 border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105"
@@ -318,7 +258,7 @@ const CertificateVerify = () => {
           <div className="mt-8 bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg max-w-2xl w-full">
             <h3 className="text-lg font-semibold text-gray-800 mb-4">Sample Registration Numbers:</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
-              {Object.keys(certificateDatabase).map((regNo) => (
+              {getAllRegistrationNumbers().map((regNo) => (
                 <div key={regNo} className="bg-blue-50 text-blue-700 px-3 py-2 rounded-lg font-mono text-center">
                   {regNo}
                 </div>
