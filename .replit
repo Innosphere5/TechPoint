@@ -10,6 +10,14 @@ packages = ["cowsay"]
 localPort = 3000
 externalPort = 80
 
+[[ports]]
+localPort = 3001
+externalPort = 3001
+
+[[ports]]
+localPort = 3002
+externalPort = 3002
+
 [workflows]
 runButton = "Next.js Dev Server"
 
