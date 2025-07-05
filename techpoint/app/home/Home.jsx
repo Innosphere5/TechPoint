@@ -47,15 +47,15 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-6">
-              <button className="group relative bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-blue-500/25 overflow-hidden" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              <a href="/certificate-verify" className="group relative bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-blue-500/25 overflow-hidden inline-block text-center" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                 <span className="relative z-10">Certificate Verify</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </button>
+              </a>
 
-              <button className="group relative border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25 backdrop-blur-sm bg-white/50" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              <a href="#" className="group relative border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25 backdrop-blur-sm bg-white/50 inline-block text-center" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                 <span className="relative z-10">Syllabus Download</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
-              </button>
+              </a>
             </div>
 
             {/* Stats */}
