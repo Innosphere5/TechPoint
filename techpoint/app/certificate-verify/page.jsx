@@ -1,9 +1,12 @@
-import CertificateVerify from "./certificate-verify"
 
-const page = ()=>{
-  return(
-    <CertificateVerify />
-  )
-}
+import CertificateVerify from "./certificate-verify";
 
-export default page
+const Page = () => {
+  return (
+    <main className="pt-20">
+      <CertificateVerify />
+    </main>
+  );
+};
+
+export default Page;
