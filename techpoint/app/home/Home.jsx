@@ -22,7 +22,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Content */}
-      <div className="px-6 md:px-12  md:py-12 relative z-10">
+      <div className="px-6 md:px-12  md:py-24 relative z-10">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <div className="space-y-10 animate-fadeInLeft">
