@@ -2,47 +2,47 @@
 // Certificate database mapping registration numbers to PDF files
 
 export const certificateDatabase = {
-  'GURWINDER001': {
+  '690': {
     name: 'GURWINDER',
     pdfPath: '/certificates/GURWINDER.pdf',
     course: 'Digital Computer Application',
-    issueDate: '2024-01-15'
+    issueDate: '15-06-2025'
   },
-  '001': {
+  '651': {
     name: 'JASPREET KAUR',
     pdfPath: '/certificates/JASPREET KAUR.pdf',
     course: 'Digital Computer Application',
-    issueDate: '2024-01-20'
+    issueDate: '10-01-2025'
   },
-  'KAJALPREET003': {
+  '400': {
     name: 'KAJALPREET KAUR',
     pdfPath: '/certificates/KAJALPREET KAUR DCA.pdf',
     course: 'Digital Computer Application',
-    issueDate: '2024-02-10'
+    issueDate: '10-01-2020'
   },
-  'KARMANJOT004': {
+  '652': {
     name: 'KARMANJOT',
     pdfPath: '/certificates/KARMANJOT.pdf',
     course: 'Digital Computer Application',
-    issueDate: '2024-02-15'
+    issueDate: '10-01-2023'
   },
-  'SPOKEN005': {
+  '401': {
     name: 'SPOKEN ENGLISH STUDENT',
     pdfPath: '/certificates/SPOKEN.pdf',
     course: 'Spoken English',
-    issueDate: '2024-03-01'
+    issueDate: '10-01-2021'
   },
-  'YASHKARAN006': {
+  '653': {
     name: 'YASHKARAN',
     pdfPath: '/certificates/YASHKARAN1.pdf',
     course: 'Digital Computer Application',
-    issueDate: '2024-03-10'
+    issueDate: '10-01-2023'
   },
-  'TEACHING007': {
+  '13': {
     name: 'TEACHING EXPERIENCE',
     pdfPath: '/certificates/teaching experience cert - Copy.pdf',
     course: 'Teaching Experience Certificate',
-    issueDate: '2024-03-15'
+    issueDate: '10-01-2022'
   }
 };
 

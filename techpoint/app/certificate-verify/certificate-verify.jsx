@@ -76,7 +76,7 @@ const CertificateVerify = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 relative overflow-hidden">
       {/* Main Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4">
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 py-2">
         {/* Main Card */}
         <div className="w-full max-w-2xl mx-4">
           <div className="relative group">
@@ -119,7 +119,7 @@ const CertificateVerify = () => {
                           type="text"
                           value={registrationNumber}
                           onChange={(e) => setRegistrationNumber(e.target.value)}
-                          placeholder="Enter your certificate number (e.g., GURWINDER001)"
+                          placeholder="Enter your certificate number (e.g., 400)"
                           className="relative w-full px-6 py-4 bg-gray-50 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-blue-500 focus:bg-white transition-all duration-300 text-gray-700 placeholder-gray-400"
                           disabled={isVerifying}
                         />

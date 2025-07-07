@@ -22,12 +22,12 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Content */}
-      <div className="px-6 md:px-12  md:py-24 relative z-10">
+      <div className="px-6 md:px-12  md:py-25 relative z-10">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <div className="space-y-10 animate-fadeInLeft">
             <div className="space-y-8">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-600 text-sm font-medium mb-6" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              <div className="inline-flex items-center px-4 py-5 rounded-full bg-blue-100 text-blue-600 text-sm font-medium mb-6" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                 ✨ Transform Your Career Today
               </div>
 
@@ -52,7 +52,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
 
-              <a href="#" className="group relative border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25 backdrop-blur-sm bg-white/50 inline-block text-center" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              <a href="/syllabus-download" className="group relative border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25 backdrop-blur-sm bg-white/50 inline-block text-center" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                 <span className="relative z-10">Syllabus Download</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
               </a>

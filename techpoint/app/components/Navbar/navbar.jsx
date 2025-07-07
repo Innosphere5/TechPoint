@@ -171,12 +171,12 @@ export default function Navbar() {
 
                 <div className="flex items-center space-x-3 p-4 rounded-xl bg-gray-50 text-slate-600">
                   <Mail className="w-5 h-5 text-blue-600" />
-                  <span className="text-sm">info@techpoint.com</span>
+                  <span className="text-sm">gktechp931@gmail.com</span>
                 </div>
 
                 <div className="flex items-center space-x-3 p-4 rounded-xl bg-gray-50 text-slate-600">
                   <MapPin className="w-5 h-5 text-blue-600" />
-                  <span className="text-sm">New York, NY</span>
+                  <span className="text-sm">Bassi Pathana, F.G.S</span>
                 </div>
               </div>
             </div>
