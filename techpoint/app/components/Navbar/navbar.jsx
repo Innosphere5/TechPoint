@@ -40,6 +40,7 @@ export default function Navbar() {
     { href: '/courses', label: 'Courses' },
     { href: '/certificate-verify', label: 'Certificate Verify' },
     { href: '/quiz-test', label: 'Quiz Test' },
+    { href: '/typing-test', label: 'Typing Test' },
     { href: '/syllabus-download', label: 'Syllabus Download' },
   ];
 
