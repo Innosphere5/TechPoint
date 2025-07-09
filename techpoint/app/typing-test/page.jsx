@@ -3,34 +3,40 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Clock, RotateCcw, Target, Zap, Award, Globe, Keyboard } from 'lucide-react';
 
-// Sample texts for typing
+// Sample texts for typing - Beginner friendly with simple words
 const sampleTexts = {
   english: {
     beginner: [
-      "The quick brown fox jumps over the lazy dog. This sentence contains all letters of the alphabet and is perfect for typing practice.",
-      "Technology has changed the way we live and work. Computers and smartphones have become essential tools in our daily lives.",
-      "Learning to type fast is a valuable skill in today's digital world. Practice makes perfect when it comes to keyboard mastery.",
-      "The sun rises in the east and sets in the west. Birds fly high in the blue sky while children play in the park below."
+      "the cat sat on the mat. a dog ran in the park. birds fly in the sky. fish swim in the water.",
+      "i like to eat apples and bananas. my mom makes good food. we go to school every day. books help us learn new things.",
+      "the sun is bright today. children play with their toys. we can walk to the store. trees give us fresh air to breathe.",
+      "type these words slowly and carefully. practice makes you better at typing. keep your fingers on the home row keys.",
+      "start typing with both hands. look at the screen not the keyboard. take breaks when you feel tired. good posture helps you type better.",
+      "simple words like cat dog run jump help new typists. use all your fingers when you type. do not hunt and peck with two fingers only."
     ],
     intermediate: [
-      "Artificial intelligence and machine learning are revolutionizing industries across the globe. From healthcare to finance, these technologies are creating unprecedented opportunities for innovation and growth.",
-      "The rapid advancement of technology has transformed our society in ways that were unimaginable just a few decades ago. Social media platforms connect billions of people worldwide, enabling instant communication and information sharing.",
-      "Cybersecurity has become increasingly important as more businesses and individuals rely on digital platforms for their daily operations. Protecting sensitive data and maintaining privacy are critical challenges in the modern era.",
-      "Climate change represents one of the most pressing challenges of our time, requiring coordinated global action to reduce greenhouse gas emissions and transition to sustainable energy sources."
+      "Professional Development: Continuous learning and skill enhancement are fundamental requirements for career advancement in today's competitive marketplace. Organizations prioritize employees who demonstrate adaptability, critical thinking, and technological proficiency.",
+      "Digital Communication: Email etiquette, video conferencing protocols, and collaborative platform management have become essential competencies. Effective virtual collaboration requires sophisticated understanding of multiple software applications and communication channels.",
+      "Project Management Methodologies: Agile frameworks, Scrum ceremonies, and Kanban visualization techniques optimize workflow efficiency. Cross-functional team coordination demands comprehensive knowledge of project lifecycle management and stakeholder engagement strategies.",
+      "Data Analytics & Visualization: Statistical interpretation, trend analysis, and predictive modeling capabilities drive evidence-based decision making. Business intelligence tools, dashboard creation, and performance metrics monitoring are increasingly valuable professional skills.",
+      "Cybersecurity Awareness: Threat identification, password management, multi-factor authentication, and data privacy compliance protect organizational assets. Understanding social engineering tactics, phishing schemes, and security best practices is mandatory for all professionals."
     ]
   },
   punjabi: {
     beginner: [
-      "ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ। ਅਸੀਂ ਪੰਜਾਬੀ ਭਾਸ਼ਾ ਸਿੱਖ ਰਹੇ ਹਾਂ। ਇਹ ਬਹੁਤ ਸੁੰਦਰ ਭਾਸ਼ਾ ਹੈ।",
-      "ਸਕੂਲ ਵਿੱਚ ਬੱਚੇ ਪੜ੍ਹਦੇ ਹਨ। ਉਹ ਖੇਡਦੇ ਅਤੇ ਹੱਸਦੇ ਹਨ। ਅਧਿਆਪਕ ਉਨ੍ਹਾਂ ਨੂੰ ਪੜ੍ਹਾਉਂਦੇ ਹਨ।",
-      "ਅਸੀਂ ਰੋਜ਼ ਅਨਾਜ ਖਾਂਦੇ ਹਾਂ। ਰੋਟੀ, ਚਾਵਲ ਅਤੇ ਦਾਲ ਸਾਡਾ ਮੁੱਖ ਭੋਜਨ ਹੈ।",
-      "ਪੰਜਾਬ ਵਿੱਚ ਖੇਤੀ ਬਹੁਤ ਮਸ਼ਹੂਰ ਹੈ। ਕਿਸਾਨ ਗੰਨੇ, ਕਣਕ ਅਤੇ ਚਾਵਲ ਉਗਾਉਂਦੇ ਹਨ।"
+      "ਇਹ ਅਸਾਨ ਸ਼ਬਦ ਹਨ। ਮਾਂ ਬਾਪ ਘਰ ਪਾਣੀ ਦੁੱਧ ਰੋਟੀ ਖਾਣਾ। ਮੈਂ ਤੂੰ ਅਸੀਂ ਤੁਸੀਂ ਉਹ ਇਹ।",
+      "ਸਕੂਲ ਕਿਤਾਬ ਪੜ੍ਹਨਾ ਲਿਖਣਾ ਖੇਡਣਾ ਹੱਸਣਾ। ਅਧਿਆਪਕ ਵਿਦਿਆਰਥੀ ਕਲਾਸ ਪਾਠ।",
+      "ਦਿਨ ਰਾਤ ਸਵੇਰ ਸ਼ਾਮ ਸੂਰਜ ਚੰਦ ਤਾਰੇ। ਗਰਮੀ ਸਰਦੀ ਮੀਂਹ ਬਰਫ਼।",
+      "ਆਮ ਸੇਬ ਕੇਲਾ ਸੰਤਰਾ ਫਲ ਸਬਜ਼ੀ। ਚਾਹ ਕਾਫੀ ਪਾਣੀ ਜੂਸ ਪੀਣਾ।",
+      "ਕੱਲ੍ਹ ਅੱਜ ਕੱਲ ਦਿਨ ਹਫ਼ਤਾ ਮਹੀਨਾ ਸਾਲ। ਜਲਦੀ ਧੀਰੇ ਤੇਜ਼ ਹੌਲੀ।",
+      "ਪੰਜਾਬੀ ਟਾਈਪਿੰਗ ਸਿੱਖੋ। ਆਸਾਨ ਸ਼ਬਦਾਂ ਨਾਲ ਸ਼ੁਰੂਆਤ ਕਰੋ। ਅਭਿਆਸ ਕਰਦੇ ਰਹੋ।"
     ],
     intermediate: [
-      "ਤਕਨੀਕੀ ਤਰੱਕੀ ਨੇ ਸਾਡੇ ਜੀਵਨ ਨੂੰ ਬਹੁਤ ਬਦਲ ਦਿੱਤਾ ਹੈ। ਕੰਪਿਊਟਰ ਅਤੇ ਸਮਾਰਟਫੋਨ ਹੁਣ ਸਾਡੇ ਰੋਜ਼ਾਨਾ ਜੀਵਨ ਦਾ ਹਿੱਸਾ ਬਣ ਗਏ ਹਨ।",
-      "ਸਿੱਖਿਆ ਹਰ ਵਿਅਕਤੀ ਦਾ ਬੁਨਿਆਦੀ ਹੱਕ ਹੈ। ਅਸੀਂ ਸਾਰਿਆਂ ਨੂੰ ਮਿਲ ਕੇ ਸਿੱਖਿਆ ਦੇ ਖੇਤਰ ਵਿੱਚ ਸੁਧਾਰ ਲਿਆਉਣਾ ਚਾਹੀਦਾ ਹੈ।",
-      "ਵਾਤਾਵਰਣ ਦੀ ਸੁਰੱਖਿਆ ਸਾਡੀ ਸਾਂਝੀ ਜ਼ਿੰਮੇਵਾਰੀ ਹੈ। ਅਸੀਂ ਪੇੜ ਲਗਾ ਕੇ ਅਤੇ ਪ੍ਰਦੂਸ਼ਣ ਘਟਾ ਕੇ ਧਰਤੀ ਨੂੰ ਬਚਾ ਸਕਦੇ ਹਾਂ।",
-      "ਸਾਡੀ ਪੰਜਾਬੀ ਸਭਿਆਚਾਰ ਬਹੁਤ ਅਮੀਰ ਹੈ। ਸਾਡੇ ਤਿਉਹਾਰ, ਸੰਗੀਤ ਅਤੇ ਭੋਜਨ ਪੂਰੀ ਦੁਨੀਆਂ ਵਿੱਚ ਮਸ਼ਹੂਰ ਹਨ।"
+      "ਆਧੁਨਿਕ ਤਕਨੀਕੀ ਵਿਕਾਸ: ਕੰਪਿਊਟਰ ਸਾਇੰਸ, ਇੰਜੀਨੀਅਰਿੰਗ, ਅਤੇ ਸਾਫਟਵੇਅਰ ਡਿਵੈਲਪਮੈਂਟ ਦੇ ਖੇਤਰ ਵਿੱਚ ਉਨਨਤੀ ਨੇ ਮਾਨਵੀ ਸਭਿਆਚਾਰ ਨੂੰ ਮੂਲਭੂਤ ਰੂਪ ਵਿੱਚ ਬਦਲ ਦਿੱਤਾ ਹੈ।",
+      "ਸਿੱਖਿਆ ਪ੍ਰਣਾਲੀ ਸੁਧਾਰ: ਪਰੰਪਰਾਗਤ ਅਧਿਆਪਨ ਵਿਧੀਆਂ ਤੋਂ ਡਿਜੀਟਲ ਮਾਧਿਅਮਾਂ ਵੱਲ ਤਬਦੀਲੀ ਨੇ ਗਿਆਨ ਪ੍ਰਾਪਤੀ ਦੇ ਨਵੇਂ ਆਯਾਮ ਸਿਰਜੇ ਹਨ। ਇਲੈਕਟ੍ਰਾਨਿਕ ਕਿਤਾਬਾਂ, ਔਨਲਾਈਨ ਕੋਰਸਿਜ਼, ਅਤੇ ਵਰਚੁਅਲ ਕਲਾਸਰੂਮ ਸਿਸਟਮ।",
+      "ਵਾਤਾਵਰਣ ਸੰਰਕਸ਼ਣ ਰਣਨੀਤੀ: ਜਲਵਾਯੂ ਪਰਿਵਰਤਨ, ਹਵਾ ਪ੍ਰਦੂਸ਼ਣ, ਤੇ ਕੁਦਰਤੀ ਸਰੋਤਾਂ ਦੀ ਸੁਰੱਖਿਆ ਲਈ ਸਮੁਦਾਇਕ ਯਤਨ। ਰੀਸਾਈਕਲਿੰਗ, ਨਵਿਆਉਣਯੋਗ ਊਰਜਾ, ਅਤੇ ਸਸਟੇਨੇਬਲ ਲਿਵਿੰਗ ਪ੍ਰੈਕਟਿਸਿਸ।",
+      "ਸਮਾਜਿਕ ਮੀਡੀਆ ਪ੍ਰਭਾਵ: ਫੇਸਬੁੱਕ, ਇੰਸਟਾਗ੍ਰਾਮ, ਟਵਿੱਟਰ, ਅਤੇ ਯੂਟਿਊਬ ਪਲੇਟਫਾਰਮਸ ਨੇ ਸੰਚਾਰ ਪੱਧਤੀ ਵਿੱਚ ਕ੍ਰਾਂਤੀਕਾਰੀ ਬਦਲਾਅ ਲਿਆਂਦਾ ਹੈ। ਸੂਚਨਾ ਸਾਂਝਾਕਰਨ, ਵਿਆਪਾਰਿਕ ਮਾਰਕੀਟਿੰਗ, ਅਤੇ ਸਮਾਜਿਕ ਰਾਜਨੀਤਿਕ ਚੇਤਨਾ ਦੇ ਨਵੇਂ ਰੂਪ।",
+      "ਆਰਥਿਕ ਵਿਕਾਸ ਮਾਡਲ: ਸਟਾਰਟਅਪ ਕਲਚਰ, ਈ-ਕਾਮਰਸ ਪਲੇਟਫਾਰਮ, ਅਤੇ ਡਿਜੀਟਲ ਪੇਮੈਂਟ ਸਿਸਟਮ ਨੇ ਪਰੰਪਰਾਗਤ ਵਪਾਰਿਕ ਢਾਂਚੇ ਨੂੰ ਤਬਦੀਲ ਕਰ ਦਿੱਤਾ ਹੈ। ਫਿਨਟੈਕ ਇਨੋਵੇਸ਼ਨ, ਬਲਾਕਚੇਨ ਟੈਕਨਾਲਜੀ, ਅਤੇ ਕ੍ਰਿਪਟੋਕਰੰਸੀ।"
     ]
   }
 };
