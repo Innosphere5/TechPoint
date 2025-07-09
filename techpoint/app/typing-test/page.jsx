@@ -49,51 +49,71 @@ const TypingTest = () => {
   const [accuracy, setAccuracy] = useState(100);
   const [timeElapsed, setTimeElapsed] = useState(0);
   const [showResults, setShowResults] = useState(false);
+  const [isTestActive, setIsTestActive] = useState(false);
   const inputRef = useRef(null);
   const textDisplayRef = useRef(null);
+
+  // Generate endless text by repeating and mixing texts
+  const generateEndlessText = () => {
+    const texts = sampleTexts[language][level];
+    let endlessText = '';
+    
+    // Generate at least 2000 characters of text
+    while (endlessText.length < 2000) {
+      const randomText = texts[Math.floor(Math.random() * texts.length)];
+      endlessText += randomText + ' ';
+    }
+    
+    return endlessText.trim();
+  };
 
   // Initialize test
   useEffect(() => {
     resetTest();
   }, [language, level]);
 
-  // Timer
+  // Timer - runs every second when test is active
   useEffect(() => {
     let interval;
-    if (startTime && !endTime) {
+    if (isTestActive && startTime && !endTime) {
       interval = setInterval(() => {
-        setTimeElapsed(Math.floor((Date.now() - startTime) / 1000));
+        const elapsed = Math.floor((Date.now() - startTime) / 1000);
+        setTimeElapsed(elapsed);
       }, 1000);
     }
     return () => clearInterval(interval);
-  }, [startTime, endTime]);
+  }, [isTestActive, startTime, endTime]);
 
-  // Calculate WPM and accuracy
+  // Calculate WPM and accuracy in real-time
   useEffect(() => {
     if (userInput.length > 0 && timeElapsed > 0) {
-      const words = userInput.trim().split(' ').length;
+      // Calculate words (every 5 characters = 1 word)
+      const words = userInput.length / 5;
       const minutes = timeElapsed / 60;
-      setWpm(Math.round(words / minutes));
+      const currentWpm = minutes > 0 ? Math.round(words / minutes) : 0;
+      setWpm(currentWpm);
       
+      // Calculate accuracy
       let correctChars = 0;
       for (let i = 0; i < userInput.length; i++) {
         if (userInput[i] === currentText[i]) {
           correctChars++;
         }
       }
-      setAccuracy(Math.round((correctChars / userInput.length) * 100));
+      const currentAccuracy = userInput.length > 0 ? Math.round((correctChars / userInput.length) * 100) : 100;
+      setAccuracy(currentAccuracy);
     }
   }, [userInput, timeElapsed, currentText]);
 
   const resetTest = () => {
-    const texts = sampleTexts[language][level];
-    const randomText = texts[Math.floor(Math.random() * texts.length)];
-    setCurrentText(randomText);
+    const endlessText = generateEndlessText();
+    setCurrentText(endlessText);
     setUserInput('');
     setCurrentIndex(0);
     setStartTime(null);
     setEndTime(null);
     setIsCompleted(false);
+    setIsTestActive(false);
     setMistakes(0);
     setWpm(0);
     setAccuracy(100);
@@ -107,15 +127,18 @@ const TypingTest = () => {
   const handleInputChange = (e) => {
     const value = e.target.value;
     
-    if (!startTime) {
+    // Start test on first keystroke
+    if (!isTestActive && value.length === 1) {
       setStartTime(Date.now());
+      setIsTestActive(true);
     }
 
+    // Prevent input longer than current text
     if (value.length <= currentText.length) {
       setUserInput(value);
       setCurrentIndex(value.length);
 
-      // Count mistakes
+      // Count mistakes in real-time
       let mistakeCount = 0;
       for (let i = 0; i < value.length; i++) {
         if (value[i] !== currentText[i]) {
@@ -124,22 +147,28 @@ const TypingTest = () => {
       }
       setMistakes(mistakeCount);
 
-      // Check completion
-      if (value === currentText) {
-        setEndTime(Date.now());
-        setIsCompleted(true);
-        setShowResults(true);
+      // Check if user wants to complete test (when they've typed significant amount)
+      if (value.length >= 200 && value.endsWith(' ')) {
+        // Option to complete test after 200 characters
+        // For now, let it continue endlessly
       }
     }
+  };
+
+  const completeTest = () => {
+    setEndTime(Date.now());
+    setIsCompleted(true);
+    setIsTestActive(false);
+    setShowResults(true);
   };
 
   const getCharacterClass = (index) => {
     if (index < userInput.length) {
       return userInput[index] === currentText[index] 
-        ? 'text-green-600 bg-green-50' 
-        : 'text-red-600 bg-red-50';
+        ? 'text-green-600 bg-green-100' 
+        : 'text-red-600 bg-red-100';
     } else if (index === currentIndex) {
-      return 'bg-blue-200 animate-pulse';
+      return 'bg-blue-300 animate-pulse';
     }
     return 'text-gray-600';
   };
@@ -156,6 +185,18 @@ const TypingTest = () => {
       : { fontFamily: 'Montserrat, sans-serif' };
   };
 
+  // Get visible text portion for display
+  const getVisibleText = () => {
+    const start = Math.max(0, currentIndex - 50);
+    const end = Math.min(currentText.length, currentIndex + 200);
+    return {
+      text: currentText.slice(start, end),
+      offset: start
+    };
+  };
+
+  const visibleText = getVisibleText();
+
   return (
     <main className="pt-20 min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50">
       {/* Google Fonts */}
@@ -168,7 +209,7 @@ const TypingTest = () => {
             Typing Test
           </h1>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Improve your typing speed and accuracy with our interactive typing test
+            Improve your typing speed and accuracy with our endless typing challenge
           </p>
         </div>
 
@@ -176,7 +217,7 @@ const TypingTest = () => {
           <div className="max-w-5xl mx-auto">
             {/* Controls */}
             <div className="bg-white rounded-2xl shadow-lg p-6 mb-8">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                 {/* Language Selection */}
                 <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-3">
@@ -188,6 +229,7 @@ const TypingTest = () => {
                     onChange={(e) => setLanguage(e.target.value)}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     style={{ fontFamily: 'Montserrat, sans-serif' }}
+                    disabled={isTestActive}
                   >
                     <option value="english">English</option>
                     <option value="punjabi">ਪੰਜਾਬੀ (Punjabi)</option>
@@ -205,6 +247,7 @@ const TypingTest = () => {
                     onChange={(e) => setLevel(e.target.value)}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     style={{ fontFamily: 'Montserrat, sans-serif' }}
+                    disabled={isTestActive}
                   >
                     <option value="beginner">Beginner</option>
                     <option value="intermediate">Intermediate</option>
@@ -225,10 +268,26 @@ const TypingTest = () => {
                     New Test
                   </button>
                 </div>
+
+                {/* Complete Test Button */}
+                <div>
+                  <label className="block text-sm font-semibold text-slate-700 mb-3">
+                    <Award className="w-4 h-4 inline mr-2" />
+                    Finish
+                  </label>
+                  <button
+                    onClick={completeTest}
+                    disabled={!isTestActive || userInput.length < 50}
+                    className="w-full px-4 py-3 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-lg font-semibold hover:from-green-700 hover:to-green-800 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                    style={{ fontFamily: 'Montserrat, sans-serif' }}
+                  >
+                    Complete Test
+                  </button>
+                </div>
               </div>
             </div>
 
-            {/* Stats Bar */}
+            {/* Live Stats Bar */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
               <div className="bg-white rounded-xl shadow-lg p-4 text-center">
                 <div className="text-2xl font-bold text-blue-600" style={{ fontFamily: 'Montserrat, sans-serif' }}>
@@ -256,17 +315,17 @@ const TypingTest = () => {
               </div>
             </div>
 
-            {/* Progress Bar */}
+            {/* Progress Indicator */}
             <div className="bg-white rounded-xl shadow-lg p-6 mb-8">
               <div className="mb-4">
                 <div className="flex justify-between text-sm text-slate-600 mb-2">
-                  <span>Progress</span>
-                  <span>{Math.round((userInput.length / currentText.length) * 100)}%</span>
+                  <span>Characters Typed</span>
+                  <span>{userInput.length}</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-3">
                   <div
                     className="bg-gradient-to-r from-blue-600 to-purple-600 h-3 rounded-full transition-all duration-300"
-                    style={{ width: `${(userInput.length / currentText.length) * 100}%` }}
+                    style={{ width: `${Math.min((userInput.length / 100) * 100, 100)}%` }}
                   ></div>
                 </div>
               </div>
@@ -274,27 +333,30 @@ const TypingTest = () => {
 
             {/* Typing Area */}
             <div className="bg-white rounded-2xl shadow-lg p-8">
-              {/* Text Display */}
+              {/* Text Display - Shows current portion of text */}
               <div
                 ref={textDisplayRef}
-                className="mb-6 p-6 bg-gray-50 rounded-xl border-2 border-gray-200 min-h-[200px] text-xl leading-relaxed"
+                className="mb-6 p-6 bg-gray-50 rounded-xl border-2 border-gray-200 min-h-[200px] text-xl leading-relaxed overflow-hidden"
                 style={getFontFamily()}
               >
-                {currentText.split('').map((char, index) => (
-                  <span
-                    key={index}
-                    className={`${getCharacterClass(index)} transition-all duration-150 ${
-                      char === ' ' ? 'mx-1' : ''
-                    }`}
-                  >
-                    {char === ' ' ? '\u00A0' : char}
-                  </span>
-                ))}
+                {visibleText.text.split('').map((char, index) => {
+                  const absoluteIndex = visibleText.offset + index;
+                  return (
+                    <span
+                      key={absoluteIndex}
+                      className={`${getCharacterClass(absoluteIndex)} transition-all duration-150 ${
+                        char === ' ' ? 'mx-1' : ''
+                      }`}
+                    >
+                      {char === ' ' ? '\u00A0' : char}
+                    </span>
+                  );
+                })}
               </div>
 
               {/* Input Area */}
               <div className="relative">
-                <Keyboard className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <Keyboard className="absolute left-4 top-4 text-gray-400 w-5 h-5" />
                 <textarea
                   ref={inputRef}
                   value={userInput}
@@ -305,9 +367,15 @@ const TypingTest = () => {
                     ...getFontFamily(),
                     lineHeight: '1.6'
                   }}
-                  rows="4"
+                  rows="6"
                   disabled={isCompleted}
                 />
+              </div>
+
+              {/* Instructions */}
+              <div className="mt-4 text-center text-sm text-gray-600">
+                <p>Type the text above. The test will continue endlessly until you click "Complete Test".</p>
+                <p className="mt-2">Minimum 50 characters required to complete the test.</p>
               </div>
             </div>
           </div>
@@ -320,7 +388,7 @@ const TypingTest = () => {
                 <h2 className="text-4xl font-bold text-slate-800 mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                   Test Completed!
                 </h2>
-                <p className="text-xl text-slate-600">Great job! Here are your results:</p>
+                <p className="text-xl text-slate-600">Great job! Here are your final results:</p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
@@ -356,6 +424,24 @@ const TypingTest = () => {
                 </div>
               </div>
 
+              {/* Additional Stats */}
+              <div className="bg-gray-50 rounded-xl p-6 mb-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                  <div>
+                    <div className="text-2xl font-bold text-slate-800">{userInput.length}</div>
+                    <div className="text-sm text-slate-600">Characters Typed</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-slate-800">{Math.round(userInput.length / 5)}</div>
+                    <div className="text-sm text-slate-600">Words Typed</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-slate-800">{timeElapsed > 0 ? Math.round(userInput.length / timeElapsed) : 0}</div>
+                    <div className="text-sm text-slate-600">Chars Per Second</div>
+                  </div>
+                </div>
+              </div>
+
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button
                   onClick={() => setShowResults(false)}
@@ -363,7 +449,7 @@ const TypingTest = () => {
                   style={{ fontFamily: 'Montserrat, sans-serif' }}
                 >
                   <RotateCcw className="w-5 h-5 inline mr-2" />
-                  Try Again
+                  Continue Typing
                 </button>
                 <button
                   onClick={resetTest}
