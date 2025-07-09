@@ -293,33 +293,7 @@ const TypingTest = () => {
               </div>
             </div>
 
-            {/* Live Stats Bar */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-              <div className="bg-white rounded-xl shadow-lg p-4 text-center">
-                <div className="text-2xl font-bold text-blue-600" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                  {formatTime(timeElapsed)}
-                </div>
-                <div className="text-sm text-slate-600 font-medium">Time</div>
-              </div>
-              <div className="bg-white rounded-xl shadow-lg p-4 text-center">
-                <div className="text-2xl font-bold text-green-600" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                  {wpm}
-                </div>
-                <div className="text-sm text-slate-600 font-medium">WPM</div>
-              </div>
-              <div className="bg-white rounded-xl shadow-lg p-4 text-center">
-                <div className="text-2xl font-bold text-purple-600" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                  {accuracy}%
-                </div>
-                <div className="text-sm text-slate-600 font-medium">Accuracy</div>
-              </div>
-              <div className="bg-white rounded-xl shadow-lg p-4 text-center">
-                <div className="text-2xl font-bold text-red-600" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                  {mistakes}
-                </div>
-                <div className="text-sm text-slate-600 font-medium">Mistakes</div>
-              </div>
-            </div>
+         
 
             {/* Progress Indicator */}
             <div className="bg-white rounded-xl shadow-lg p-6 mb-8">
@@ -378,6 +352,34 @@ const TypingTest = () => {
                 />
               </div>
 
+              {/* Live Stats Bar */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 mt-4">
+                <div className="bg-white rounded-xl shadow-lg p-4 text-center">
+                  <div className="text-2xl font-bold text-blue-600" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                    {formatTime(timeElapsed)}
+                  </div>
+                  <div className="text-sm text-slate-600 font-medium">Time</div>
+                </div>
+                <div className="bg-white rounded-xl shadow-lg p-4 text-center">
+                  <div className="text-2xl font-bold text-green-600" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                    {wpm}
+                  </div>
+                  <div className="text-sm text-slate-600 font-medium">WPM</div>
+                </div>
+                <div className="bg-white rounded-xl shadow-lg p-4 text-center">
+                  <div className="text-2xl font-bold text-purple-600" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                    {accuracy}%
+                  </div>
+                  <div className="text-sm text-slate-600 font-medium">Accuracy</div>
+                </div>
+                <div className="bg-white rounded-xl shadow-lg p-4 text-center">
+                  <div className="text-2xl font-bold text-red-600" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                    {mistakes}
+                  </div>
+                  <div className="text-sm text-slate-600 font-medium">Mistakes</div>
+                </div>
+              </div>
+
               {/* Instructions */}
               <div className="mt-4 text-center text-sm text-gray-600">
                 <p>Type the text above. The test will continue endlessly until you click "Complete Test".</p>
@@ -385,6 +387,7 @@ const TypingTest = () => {
               </div>
             </div>
           </div>
+      
         ) : (
           /* Results Dashboard */
           <div className="max-w-4xl mx-auto">
