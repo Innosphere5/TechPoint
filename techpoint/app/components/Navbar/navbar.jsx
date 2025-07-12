@@ -51,7 +51,7 @@ export default function Navbar() {
           ? 'backdrop-blur-md bg-white/90 shadow-lg border-b border-white/30' 
           : 'backdrop-blur-sm bg-white/10 border-b border-white/20'
       }`}>
-        <Link href="/" className="text-2xl md:text-3xl font-bold text-slate-800 tracking-tight hover:text-blue-600 transition-colors duration-300" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+        <Link href="/" className="text-2xl md:text-3xl font-bold text-slate-800 tracking-tight hover:text-orange-600 transition-colors duration-300" style={{ fontFamily: 'Montserrat, sans-serif' }}>
           TechPoint
         </Link>
 
@@ -61,10 +61,10 @@ export default function Navbar() {
             <Link 
               key={link.href}
               href={link.href} 
-              className="hover:text-blue-600 transition-all duration-300 font-medium text-base relative group"
+              className="hover:text-orange-600 transition-all duration-300 font-medium text-base relative group"
             >
               {link.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-600 transition-all duration-300 group-hover:w-full"></span>
             </Link>
           ))}
         </div>
@@ -74,7 +74,7 @@ export default function Navbar() {
           {/* Contact Us Button - Desktop */}
           <Link 
             href="/contact" 
-            className="hidden md:flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            className="hidden md:flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-full font-semibold hover:from-orange-600 hover:to-red-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
           >
             <Phone className="w-4 h-4" />
             <span>Contact Us</span>
@@ -141,16 +141,16 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={closeMobileMenu}
-                  className="flex items-center justify-between p-4 rounded-xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300 group"
+                  className="flex items-center justify-between p-4 rounded-xl hover:bg-gradient-to-r hover:from-orange-50 hover:to-red-50 transition-all duration-300 group"
                   style={{ 
                     animationDelay: `${index * 100}ms`,
                     animation: isMobileMenuOpen ? 'slideInFromRight 0.3s ease-out forwards' : 'none'
                   }}
                 >
-                  <span className="text-slate-700 font-medium text-lg group-hover:text-blue-600 transition-colors">
+                  <span className="text-slate-700 font-medium text-lg group-hover:text-orange-600 transition-colors">
                     {link.label}
                   </span>
-                  <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-blue-600 transform group-hover:translate-x-1 transition-all duration-300" />
+                  <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-orange-600 transform group-hover:translate-x-1 transition-all duration-300" />
                 </Link>
               ))}
             </div>
@@ -164,19 +164,19 @@ export default function Navbar() {
                 <Link
                   href="/contact"
                   onClick={closeMobileMenu}
-                  className="flex items-center space-x-3 p-4 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  className="flex items-center space-x-3 p-4 rounded-xl bg-gradient-to-r from-orange-500 to-red-500 text-white hover:from-orange-600 hover:to-red-600 transition-all duration-300 transform hover:scale-105 shadow-lg"
                 >
                   <Phone className="w-5 h-5" />
                   <span className="font-medium">Contact Us</span>
                 </Link>
 
                 <div className="flex items-center space-x-3 p-4 rounded-xl bg-gray-50 text-slate-600">
-                  <Mail className="w-5 h-5 text-blue-600" />
+                  <Mail className="w-5 h-5 text-orange-600" />
                   <span className="text-sm">gktechp931@gmail.com</span>
                 </div>
 
                 <div className="flex items-center space-x-3 p-4 rounded-xl bg-gray-50 text-slate-600">
-                  <MapPin className="w-5 h-5 text-blue-600" />
+                  <MapPin className="w-5 h-5 text-orange-600" />
                   <span className="text-sm">Bassi Pathana, F.G.S</span>
                 </div>
               </div>

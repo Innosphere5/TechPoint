@@ -62,13 +62,13 @@ const SyllabusDownloadPage = () => {
           <div className="relative inline-block mb-4 sm:mb-6">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 leading-tight" style={{ fontFamily: 'Montserrat, sans-serif' }}>
               Download Your Course 
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent block mt-1 sm:mt-2">
+              <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent block mt-1 sm:mt-2">
                 Syllabus
               </span>
             </h1>
             {/* Decorative elements */}
-            <div className="absolute -top-2 sm:-top-4 -right-2 sm:-right-4 w-6 h-6 sm:w-8 sm:h-8 bg-blue-400 rounded-full opacity-20 animate-bounce"></div>
-            <div className="absolute -bottom-1 sm:-bottom-2 -left-1 sm:-left-2 w-4 h-4 sm:w-6 sm:h-6 bg-purple-400 rounded-full opacity-30 animate-bounce" style={{ animationDelay: '0.5s' }}></div>
+            <div className="absolute -top-2 sm:-top-4 -right-2 sm:-right-4 w-6 h-6 sm:w-8 sm:h-8 bg-orange-400 rounded-full opacity-20 animate-bounce"></div>
+            <div className="absolute -bottom-1 sm:-bottom-2 -left-1 sm:-left-2 w-4 h-4 sm:w-6 sm:h-6 bg-red-400 rounded-full opacity-30 animate-bounce" style={{ animationDelay: '0.5s' }}></div>
           </div>
           <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto px-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>
             Access comprehensive course materials and detailed syllabus for all our programs
