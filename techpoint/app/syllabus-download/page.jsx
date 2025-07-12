@@ -70,9 +70,7 @@ const SyllabusDownloadPage = () => {
             <div className="absolute -top-4 -right-4 w-8 h-8 bg-blue-400 rounded-full opacity-20 animate-bounce"></div>
             <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-purple-400 rounded-full opacity-30 animate-bounce" style={{ animationDelay: '0.5s' }}></div>
           </div>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Access comprehensive course syllabuses to understand curriculum, learning objectives, and course structure for all our professional programs.
-          </p>
+         
         </div>
         
         {/* Syllabus Cards Grid */}
