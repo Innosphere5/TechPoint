@@ -259,9 +259,7 @@ const CertificateVerify = () => {
             <h3 className="text-lg font-semibold text-gray-800 mb-4">Sample Registration Numbers:</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
               {getAllRegistrationNumbers().map((regNo) => (
-                <div key={regNo} className="bg-blue-50 text-blue-700 px-3 py-2 rounded-lg font-mono text-center">
-                  {regNo}
-                </div>
+                <div className="bg-orange-50 text-orange-700 px-3 py-2 rounded-lg font-mono text-center"></div>
               ))}
             </div>
           </div>

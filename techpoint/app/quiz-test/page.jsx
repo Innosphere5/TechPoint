@@ -1,4 +1,3 @@
-
 import React from "react";
 
 const QuizTestPage = () => {
@@ -13,22 +12,22 @@ const QuizTestPage = () => {
             Test your knowledge with our interactive quizzes and assessments.
           </p>
         </div>
-        
+
         <div className="max-w-2xl mx-auto bg-white rounded-xl shadow-lg p-8">
           <h2 className="text-2xl font-bold text-slate-800 mb-6">Available Tests</h2>
           <div className="space-y-4">
             <div className="border border-gray-200 rounded-lg p-4 hover:bg-gray-50 transition-colors">
               <h3 className="font-semibold text-slate-800">Computer Basics Quiz</h3>
               <p className="text-slate-600 text-sm mt-1">Test your fundamental computer knowledge</p>
-              <button className="mt-3 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
+              <button className="mt-3 bg-orange-600 text-white px-4 py-2 rounded hover:bg-orange-700 transition-colors">
                 Start Quiz
               </button>
             </div>
-            
+
             <div className="border border-gray-200 rounded-lg p-4 hover:bg-gray-50 transition-colors">
               <h3 className="font-semibold text-slate-800">English Proficiency Test</h3>
               <p className="text-slate-600 text-sm mt-1">Assess your English language skills</p>
-              <button className="mt-3 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
+              <button className="mt-3 bg-orange-600 text-white px-4 py-2 rounded hover:bg-orange-700 transition-colors">
                 Start Quiz
               </button>
             </div>

@@ -1,4 +1,3 @@
-
 "use client"
 import React, { useState, useEffect, useRef } from 'react';
 import { Clock, RotateCcw, Target, Zap, Award, Globe, Keyboard } from 'lucide-react';
@@ -56,20 +55,20 @@ const TypingTest = () => {
   const [timeElapsed, setTimeElapsed] = useState(0);
   const [showResults, setShowResults] = useState(false);
   const [isTestActive, setIsTestActive] = useState(false);
-  const inputRef = useRef(null);
+  const [inputRef = useRef(null);
   const textDisplayRef = useRef(null);
 
   // Generate endless text by repeating and mixing texts
   const generateEndlessText = () => {
     const texts = sampleTexts[language][level];
     let endlessText = '';
-    
+
     // Generate at least 2000 characters of text
     while (endlessText.length < 2000) {
       const randomText = texts[Math.floor(Math.random() * texts.length)];
       endlessText += randomText + ' ';
     }
-    
+
     return endlessText.trim();
   };
 
@@ -98,7 +97,7 @@ const TypingTest = () => {
       const minutes = timeElapsed / 60;
       const currentWpm = minutes > 0 ? Math.round(words / minutes) : 0;
       setWpm(currentWpm);
-      
+
       // Calculate accuracy
       let correctChars = 0;
       for (let i = 0; i < userInput.length; i++) {
@@ -132,7 +131,7 @@ const TypingTest = () => {
 
   const handleInputChange = (e) => {
     const value = e.target.value;
-    
+
     // Start test on first keystroke
     if (!isTestActive && value.length === 1) {
       setStartTime(Date.now());
@@ -207,7 +206,7 @@ const TypingTest = () => {
     <main className="pt-20 min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50">
       {/* Google Fonts */}
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Noto+Sans+Gurmukhi:wght@300;400;500;600&family=Mukta:wght@300;400;500;600&display=swap" rel="stylesheet" />
-      
+
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="text-center mb-8">
@@ -233,7 +232,7 @@ const TypingTest = () => {
                   <select
                     value={language}
                     onChange={(e) => setLanguage(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                     style={{ fontFamily: 'Montserrat, sans-serif' }}
                     disabled={isTestActive}
                   >
@@ -251,7 +250,7 @@ const TypingTest = () => {
                   <select
                     value={level}
                     onChange={(e) => setLevel(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                     style={{ fontFamily: 'Montserrat, sans-serif' }}
                     disabled={isTestActive}
                   >
@@ -293,7 +292,7 @@ const TypingTest = () => {
               </div>
             </div>
 
-         
+
 
             {/* Progress Indicator */}
             <div className="bg-white rounded-xl shadow-lg p-6 mb-8">
@@ -387,7 +386,7 @@ const TypingTest = () => {
               </div>
             </div>
           </div>
-      
+
         ) : (
           /* Results Dashboard */
           <div className="max-w-4xl mx-auto">

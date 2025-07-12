@@ -1,4 +1,3 @@
-
 import React from "react";
 
 const CoursesPage = () => {
@@ -13,29 +12,29 @@ const CoursesPage = () => {
             Explore our comprehensive range of digital courses designed to enhance your skills.
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Course cards would go here */}
           <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
             <h3 className="text-xl font-bold text-slate-800 mb-4">Digital Computer Application</h3>
             <p className="text-slate-600 mb-4">Master essential computer applications and digital skills.</p>
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+            <button className="bg-orange-600 text-white px-6 py-2 rounded-lg hover:bg-orange-700 transition-colors">
               Learn More
             </button>
           </div>
-          
+
           <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
             <h3 className="text-xl font-bold text-slate-800 mb-4">Spoken English</h3>
             <p className="text-slate-600 mb-4">Improve your English communication skills.</p>
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+            <button className="bg-orange-600 text-white px-6 py-2 rounded-lg hover:bg-orange-700 transition-colors">
               Learn More
             </button>
           </div>
-          
+
           <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
             <h3 className="text-xl font-bold text-slate-800 mb-4">Web Development</h3>
             <p className="text-slate-600 mb-4">Build modern websites and web applications.</p>
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+            <button className="bg-orange-600 text-white px-6 py-2 rounded-lg hover:bg-orange-700 transition-colors">
               Learn More
             </button>
           </div>
