@@ -89,7 +89,7 @@ const SyllabusDownloadPage = () => {
                   }}
                 >
                   {/* Card Glow Effect */}
-                  <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
+                  <div className="absolute -inset-1bg-gradient-to-r from-orange-500 to-red-500  rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
 
                   {/* Main Card */}
                   <div className="relative bg-white rounded-2xl shadow-xl p-4 sm:p-6 lg:p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 h-full">
