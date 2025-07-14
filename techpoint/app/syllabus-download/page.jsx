@@ -1,4 +1,3 @@
-
 "use client"
 import React from "react";
 import { Download, FileText, Palette, FileSpreadsheet, Calculator, Image } from "lucide-react";
@@ -74,7 +73,7 @@ const SyllabusDownloadPage = () => {
             Access comprehensive course materials and detailed syllabus for all our programs
           </p>
         </div>
-        
+
         {/* Syllabus Cards Grid */}
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-2 gap-6 sm:gap-8">
@@ -91,7 +90,7 @@ const SyllabusDownloadPage = () => {
                 >
                   {/* Card Glow Effect */}
                   <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
-                  
+
                   {/* Main Card */}
                   <div className="relative bg-white rounded-2xl shadow-xl p-4 sm:p-6 lg:p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 h-full">
                     {/* Mobile Layout - Stacked */}
@@ -110,7 +109,7 @@ const SyllabusDownloadPage = () => {
                           </div>
                         </div>
                       </div>
-                      
+
                       {/* Content Section - Mobile */}
                       <div className="text-center">
                         <h3 className="text-xl font-bold text-slate-800 mb-2 group-hover:text-blue-600 transition-colors duration-300">
@@ -119,20 +118,20 @@ const SyllabusDownloadPage = () => {
                         <p className="text-slate-600 mb-4 leading-relaxed text-sm">
                           {syllabus.description}
                         </p>
-                        
+
                         {/* Download Button - Mobile */}
                         <button 
                           onClick={() => handleDownload(syllabus)}
                           className="group/btn relative overflow-hidden w-full"
                         >
-                          <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl opacity-100 group-hover/btn:opacity-90 transition duration-300"></div>
-                          <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl opacity-0 group-hover/btn:opacity-100 transition duration-300"></div>
-                          
+                          <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl opacity-100 group-hover/btn:opacity-90 transition duration-300"></div>
+                          <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-red-600 rounded-xl opacity-0 group-hover/btn:opacity-100 transition duration-300"></div>
+
                           <div className="relative flex items-center justify-center space-x-2 px-4 py-3 text-white font-semibold text-base rounded-xl transform group-hover/btn:scale-105 transition-transform duration-200">
                             <Download className="w-4 h-4 group-hover/btn:animate-bounce" />
                             <span>Download Syllabus</span>
                           </div>
-                          
+
                           {/* Button shine effect */}
                           <div className="absolute inset-0 -top-1 -left-1 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover/btn:opacity-20 transform -skew-x-12 transition-all duration-700 group-hover/btn:translate-x-full"></div>
                         </button>
@@ -152,7 +151,7 @@ const SyllabusDownloadPage = () => {
                           <div className="w-1.5 h-1.5 lg:w-2 lg:h-2 bg-white rounded-full"></div>
                         </div>
                       </div>
-                      
+
                       {/* Content Section - Desktop */}
                       <div className="flex-1 min-w-0">
                         <h3 className="text-xl lg:text-2xl font-bold text-slate-800 mb-2 lg:mb-3 group-hover:text-blue-600 transition-colors duration-300">
@@ -161,26 +160,26 @@ const SyllabusDownloadPage = () => {
                         <p className="text-slate-600 mb-4 lg:mb-6 leading-relaxed text-sm lg:text-base">
                           {syllabus.description}
                         </p>
-                        
+
                         {/* Download Button - Desktop */}
                         <button 
                           onClick={() => handleDownload(syllabus)}
                           className="group/btn relative overflow-hidden w-full"
                         >
-                          <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl opacity-100 group-hover/btn:opacity-90 transition duration-300"></div>
-                          <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl opacity-0 group-hover/btn:opacity-100 transition duration-300"></div>
-                          
+                          <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl opacity-100 group-hover/btn:opacity-90 transition duration-300"></div>
+                          <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-red-600 rounded-xl opacity-0 group-hover/btn:opacity-100 transition duration-300"></div>
+
                           <div className="relative flex items-center justify-center space-x-2 lg:space-x-3 px-4 lg:px-6 py-3 lg:py-4 text-white font-semibold text-base lg:text-lg rounded-xl transform group-hover/btn:scale-105 transition-transform duration-200">
                             <Download className="w-4 h-4 lg:w-5 lg:h-5 group-hover/btn:animate-bounce" />
                             <span>Download Syllabus</span>
                           </div>
-                          
+
                           {/* Button shine effect */}
                           <div className="absolute inset-0 -top-1 -left-1 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover/btn:opacity-20 transform -skew-x-12 transition-all duration-700 group-hover/btn:translate-x-full"></div>
                         </button>
                       </div>
                     </div>
-                    
+
                     {/* Card Border Gradient */}
                     <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/10 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                   </div>
