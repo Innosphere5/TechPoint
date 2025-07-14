@@ -55,7 +55,7 @@ const TypingTest = () => {
   const [timeElapsed, setTimeElapsed] = useState(0);
   const [showResults, setShowResults] = useState(false);
   const [isTestActive, setIsTestActive] = useState(false);
-  const [inputRef = useRef(null);
+  const inputRef = useRef(null);
   const textDisplayRef = useRef(null);
 
   // Generate endless text by repeating and mixing texts
