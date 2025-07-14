@@ -1,6 +1,6 @@
 "use client"
 import React from "react";
-import { Download, FileText, Palette, FileSpreadsheet, Calculator, Image } from "lucide-react";
+import { Download, FileText, Palette, Calculator, Image } from "lucide-react";
 
 const SyllabusDownloadPage = () => {
   const syllabusFiles = [
@@ -59,7 +59,7 @@ const SyllabusDownloadPage = () => {
         {/* Header Section */}
         <div className="text-center mb-12 sm:mb-16">
           <div className="relative inline-block mb-4 sm:mb-6">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 leading-tight" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 leading-tight font-sans">
               Download Your Course 
               <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent block mt-1 sm:mt-2">
                 Syllabus
@@ -67,11 +67,9 @@ const SyllabusDownloadPage = () => {
             </h1>
             {/* Decorative elements */}
             <div className="absolute -top-2 sm:-top-4 -right-2 sm:-right-4 w-6 h-6 sm:w-8 sm:h-8 bg-orange-400 rounded-full opacity-20 animate-bounce"></div>
-            <div className="absolute -bottom-1 sm:-bottom-2 -left-1 sm:-left-2 w-4 h-4 sm:w-6 sm:h-6 bg-red-400 rounded-full opacity-30 animate-bounce" style={{ animationDelay: '0.5s' }}></div>
+            <div className="absolute -bottom-1 sm:-bottom-2 -left-1 sm:-left-2 w-4 h-4 sm:w-6 sm:h-6 bg-red-400 rounded-full opacity-30 animate-bounce delay-500"></div>
           </div>
-          <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto px-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-            Access comprehensive course materials and detailed syllabus for all our programs
-          </p>
+        
         </div>
 
         {/* Syllabus Cards Grid */}
@@ -82,14 +80,14 @@ const SyllabusDownloadPage = () => {
               return (
                 <div 
                   key={index} 
-                  className="group relative w-full"
+                  className="group relative w-full opacity-0 translate-y-8 animate-fade-in-up"
                   style={{ 
                     animationDelay: `${index * 150}ms`,
-                    animation: 'fadeInUp 0.6s ease-out forwards'
+                    animationFillMode: 'forwards'
                   }}
                 >
                   {/* Card Glow Effect */}
-                  <div className="absolute -inset-1bg-gradient-to-r from-orange-500 to-red-500  rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
+                  <div className="absolute -inset-1 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
 
                   {/* Main Card */}
                   <div className="relative bg-white rounded-2xl shadow-xl p-4 sm:p-6 lg:p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 h-full">
@@ -194,7 +192,7 @@ const SyllabusDownloadPage = () => {
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-lg max-w-4xl mx-auto border border-gray-100">
             <div className="flex items-center justify-center mb-4">
               <FileText className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600 mr-2 sm:mr-3" />
-              <h3 className="text-xl sm:text-2xl font-semibold text-slate-800" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              <h3 className="text-xl sm:text-2xl font-semibold text-slate-800 font-sans">
                 Course Information
               </h3>
             </div>
@@ -206,7 +204,6 @@ const SyllabusDownloadPage = () => {
         </div>
       </div>
 
-      {/* Custom Animations */}
       <style jsx>{`
         @keyframes fadeInUp {
           from {
@@ -217,6 +214,10 @@ const SyllabusDownloadPage = () => {
             opacity: 1;
             transform: translateY(0);
           }
+        }
+
+        .animate-fade-in-up {
+          animation: fadeInUp 0.6s ease-out forwards;
         }
       `}</style>
     </main>
