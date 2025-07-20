@@ -21,20 +21,15 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center">
               <div className="relative">
                 <Image
                   src={techpoint} 
                   alt="TechPoint Logo" 
-                  width={48}
-                  height={48}
-                  className="w-12 h-12 object-contain rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200"
+                  width={120}
+                  height={40}
+                  className="h-10 w-auto object-contain hover:scale-105 transition-transform duration-200"
                 />
-              </div>
-              <div className="hidden sm:block">
-                <h1 className="text-xl font-bold font-montserrat text-gray-800">
-                  TECH<span className="text-[#6C63FF]">POINT</span>
-                </h1>
               </div>
             </div>
 
@@ -188,17 +183,14 @@ const Navbar = () => {
 
             {/* Mobile Menu Footer */}
             <div className="px-6 py-4 bg-gray-50">
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center justify-center">
                 <Image 
                   src={techpoint}
                   alt="TechPoint Logo" 
-                  width={32}
-                  height={32}
-                  className="w-8 h-8 object-contain rounded-md"
+                  width={90}
+                  height={30}
+                  className="h-8 w-auto object-contain"
                 />
-                <span className="text-sm font-medium text-gray-600 font-montserrat">
-                  TECH<span className="text-[#6C63FF]">POINT</span>
-                </span>
               </div>
             </div>
           </div>
