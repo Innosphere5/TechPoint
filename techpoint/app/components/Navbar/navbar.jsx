@@ -1,32 +1,11 @@
 "use client"
-import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Phone, Mail, MapPin, ChevronRight } from 'lucide-react';
+import Image from "next/image"
+import techpoint from "./techpoint.png"
+import { useState } from 'react';
 
-export default function Navbar() {
+const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  // Handle scroll effect
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Prevent body scroll when menu is open
-  useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [isMobileMenuOpen]);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -36,175 +15,189 @@ export default function Navbar() {
     setIsMobileMenuOpen(false);
   };
 
-  const navLinks = [
-    { href: '/courses', label: 'Courses' },
-    { href: '/certificate-verify', label: 'Certificate Verify' },
-    { href: '/quiz-test', label: 'Quiz Test' },
-    { href: '/typing-test', label: 'Typing Test' },
-    { href: '/syllabus-download', label: 'Syllabus Download' },
-  ];
-
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6  md:px-12 py-4 transition-all duration-300 ${
-        isScrolled 
-          ? 'backdrop-blur-md bg-white/90 shadow-lg border-b border-white/30' 
-          : 'backdrop-blur-sm bg-white/10 border-b border-white/20'
-      }`}>
-        <Link href="/" className="text-2xl md:text-3xl font-bold text-slate-800 tracking-tight hover:text-orange-600 transition-colors duration-300" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-          TechPoint
-        </Link>
+      <nav className="bg-white shadow-sm border-b border-gray-100 relative z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            {/* Logo */}
+            <div className="flex items-center space-x-3">
+              <div className="relative">
+                <Image
+                  src={techpoint} 
+                  alt="TechPoint Logo" 
+                  className="w-10 h-10 sm:w-12 sm:h-12 object-contain rounded-lg shadow-sm"
+                />
+              </div>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-10 text-slate-600" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-          {navLinks.map((link) => (
-            <Link 
-              key={link.href}
-              href={link.href} 
-              className="hover:text-orange-600 transition-all duration-300 font-medium text-base relative group"
-            >
-              {link.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-600 transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-          ))}
-        </div>
-
-        {/* Desktop Contact & Mobile Menu Button */}
-        <div className="flex items-center space-x-4">
-          {/* Contact Us Button - Desktop */}
-          <Link 
-            href="/contact" 
-            className="hidden md:flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-full font-semibold hover:from-orange-600 hover:to-red-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-          >
-            <Phone className="w-4 h-4" />
-            <span>Contact Us</span>
-          </Link>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={toggleMobileMenu}
-            className="md:hidden p-3 hover:bg-white/20 rounded-full transition-all duration-300 relative z-50"
-            aria-label="Toggle mobile menu"
-          >
-            <div className="relative w-6 h-6">
-              <Menu 
-                className={`w-6 h-6 text-slate-600 absolute transition-all duration-300 ${
-                  isMobileMenuOpen ? 'rotate-90 opacity-0' : 'rotate-0 opacity-100'
-                }`} 
-              />
-              <X 
-                className={`w-6 h-6 text-slate-600 absolute transition-all duration-300 ${
-                  isMobileMenuOpen ? 'rotate-0 opacity-100' : '-rotate-90 opacity-0'
-                }`} 
-              />
             </div>
-          </button>
-        </div>
-      </nav>
 
-      {/* Mobile Menu Overlay */}
-      <div 
-        className={`fixed inset-0 z-40 transition-all duration-300 md:hidden ${
-          isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-        }`}
-        onClick={closeMobileMenu}
-      >
-        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
-      </div>
+            {/* Desktop Navigation Links */}
+            <div className="hidden lg:flex items-center space-x-8">
+              <Link 
+                href="/" 
+                className="text-gray-700 hover:text-[#6C63FF] font-medium font-montserrat transition-colors duration-200 relative group"
+              >
+                Home
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6C63FF] transition-all duration-200 group-hover:w-full"></span>
+              </Link>
+              <Link 
+                href="/about" 
+                className="text-gray-700 hover:text-[#6C63FF] font-medium font-montserrat transition-colors duration-200 relative group"
+              >
+                About us
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6C63FF] transition-all duration-200 group-hover:w-full"></span>
+              </Link>
+              <Link 
+                href="/syllabus" 
+                className="text-gray-700 hover:text-[#6C63FF] font-medium font-montserrat transition-colors duration-200 relative group"
+              >
+                Syllabus Download
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6C63FF] transition-all duration-200 group-hover:w-full"></span>
+              </Link>
+              <Link 
+                href="/contact" 
+                className="text-gray-700 hover:text-[#6C63FF] font-medium font-montserrat transition-colors duration-200 relative group"
+              >
+                Contact us
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6C63FF] transition-all duration-200 group-hover:w-full"></span>
+              </Link>
+            </div>
 
-      {/* Mobile Menu */}
-      <div 
-        className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] z-50 bg-white shadow-2xl transform transition-transform duration-300 ease-in-out md:hidden ${
-          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
-      >
-        <div className="flex flex-col h-full">
-          {/* Menu Header */}
-          <div className="flex items-center justify-between p-6 border-b border-gray-200">
-            <h2 className="text-xl font-bold text-slate-800" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-              Menu
-            </h2>
-            <button
-              onClick={closeMobileMenu}
-              className="p-2 hover:bg-gray-100 rounded-full transition-colors duration-200"
-              aria-label="Close menu"
-            >
-              <X className="w-6 h-6 text-slate-600" />
-            </button>
+            {/* Certificate Verify Button - Desktop */}
+            <div className="hidden sm:flex items-center">
+              <button className="bg-[#6C63FF] text-white px-4 py-2 lg:px-6 lg:py-2 rounded-lg font-medium font-montserrat hover:bg-[#5b54e6] transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                Certificate-verify
+              </button>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <div className="lg:hidden">
+              <button 
+                onClick={toggleMobileMenu}
+                className="text-gray-700 hover:text-[#6C63FF] p-2 rounded-md transition-colors duration-200"
+                aria-label="Toggle mobile menu"
+              >
+                <svg 
+                  className={`w-6 h-6 transform transition-transform duration-300 ${isMobileMenuOpen ? 'rotate-90' : ''}`} 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  {isMobileMenuOpen ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  )}
+                </svg>
+              </button>
+            </div>
           </div>
+        </div>
 
-          {/* Navigation Links */}
-          <div className="flex-1 overflow-y-auto">
-            <div className="p-6 space-y-2">
-              {navLinks.map((link, index) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
+        {/* Mobile Menu Overlay */}
+        {isMobileMenuOpen && (
+          <div 
+            className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+            onClick={closeMobileMenu}
+          ></div>
+        )}
+
+        {/* Mobile Menu */}
+        <div className={`
+          fixed top-16 right-0 h-full w-80 bg-white shadow-2xl transform transition-transform duration-300 ease-in-out z-50 lg:hidden
+          ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}
+        `}>
+          <div className="flex flex-col h-full">
+            {/* Mobile Menu Header */}
+            <div className="px-6 py-4 border-b border-gray-100">
+              <div className="flex items-center justify-between">
+                <span className="text-lg font-semibold text-gray-900 font-montserrat">Menu</span>
+                <button 
                   onClick={closeMobileMenu}
-                  className="flex items-center justify-between p-4 rounded-xl hover:bg-gradient-to-r hover:from-orange-50 hover:to-red-50 transition-all duration-300 group"
-                  style={{ 
-                    animationDelay: `${index * 100}ms`,
-                    animation: isMobileMenuOpen ? 'slideInFromRight 0.3s ease-out forwards' : 'none'
-                  }}
+                  className="p-2 rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors duration-200"
                 >
-                  <span className="text-slate-700 font-medium text-lg group-hover:text-orange-600 transition-colors">
-                    {link.label}
-                  </span>
-                  <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-orange-600 transform group-hover:translate-x-1 transition-all duration-300" />
-                </Link>
-              ))}
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
             </div>
 
-            {/* Contact Section */}
-            <div className="p-6 border-t border-gray-200">
-              <h3 className="text-lg font-semibold text-slate-800 mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                Get in Touch
-              </h3>
-              <div className="space-y-4">
-                <Link
-                  href="/contact"
+            {/* Mobile Navigation Links */}
+            <div className="flex-1 px-6 py-4">
+              <nav className="space-y-1">
+                <Link 
+                  href="/" 
                   onClick={closeMobileMenu}
-                  className="flex items-center space-x-3 p-4 rounded-xl bg-gradient-to-r from-orange-500 to-red-500 text-white hover:from-orange-600 hover:to-red-600 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  className="flex items-center px-4 py-3 text-gray-700 hover:text-[#6C63FF] hover:bg-purple-50 font-medium font-montserrat rounded-lg transition-all duration-200 group"
                 >
-                  <Phone className="w-5 h-5" />
-                  <span className="font-medium">Contact Us</span>
+                  <span className="flex-1">Home</span>
+                  <svg className="w-4 h-4 text-gray-400 group-hover:text-[#6C63FF] transform group-hover:translate-x-1 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </Link>
+                <Link 
+                  href="/about" 
+                  onClick={closeMobileMenu}
+                  className="flex items-center px-4 py-3 text-gray-700 hover:text-[#6C63FF] hover:bg-purple-50 font-medium font-montserrat rounded-lg transition-all duration-200 group"
+                >
+                  <span className="flex-1">About us</span>
+                  <svg className="w-4 h-4 text-gray-400 group-hover:text-[#6C63FF] transform group-hover:translate-x-1 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+                <Link 
+                  href="/syllabus" 
+                  onClick={closeMobileMenu}
+                  className="flex items-center px-4 py-3 text-gray-700 hover:text-[#6C63FF] hover:bg-purple-50 font-medium font-montserrat rounded-lg transition-all duration-200 group"
+                >
+                  <span className="flex-1">Syllabus Download</span>
+                  <svg className="w-4 h-4 text-gray-400 group-hover:text-[#6C63FF] transform group-hover:translate-x-1 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+                <Link 
+                  href="/contact" 
+                  onClick={closeMobileMenu}
+                  className="flex items-center px-4 py-3 text-gray-700 hover:text-[#6C63FF] hover:bg-purple-50 font-medium font-montserrat rounded-lg transition-all duration-200 group"
+                >
+                  <span className="flex-1">Contact us</span>
+                  <svg className="w-4 h-4 text-gray-400 group-hover:text-[#6C63FF] transform group-hover:translate-x-1 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </nav>
+            </div>
 
-                <div className="flex items-center space-x-3 p-4 rounded-xl bg-gray-50 text-slate-600">
-                  <Mail className="w-5 h-5 text-orange-600" />
-                  <span className="text-sm">gktechp931@gmail.com</span>
-                </div>
+            {/* Mobile Certificate Button */}
+            <div className="px-6 py-6 border-t border-gray-100">
+              <button 
+                onClick={closeMobileMenu}
+                className="w-full bg-[#6C63FF] text-white px-6 py-3 rounded-lg font-medium font-montserrat hover:bg-[#5b54e6] transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+              >
+                Certificate-verify
+              </button>
+            </div>
 
-                <div className="flex items-center space-x-3 p-4 rounded-xl bg-gray-50 text-slate-600">
-                  <MapPin className="w-5 h-5 text-orange-600" />
-                  <span className="text-sm">Bassi Pathana, F.G.S</span>
-                </div>
+            {/* Mobile Menu Footer */}
+            <div className="px-6 py-4 bg-gray-50">
+              <div className="flex items-center space-x-3">
+                <img 
+                  src="/logo.jpg" 
+                  alt="TechPoint Logo" 
+                  className="w-8 h-8 object-contain rounded-md"
+                />
+                <span className="text-sm font-medium text-gray-600 font-montserrat">
+                  TECH<span className="text-red-500">POINT</span>
+                </span>
               </div>
             </div>
           </div>
-
-          {/* Footer */}
-          <div className="p-6 border-t border-gray-200">
-            <p className="text-center text-sm text-slate-500">
-              © 2025 TechPoint. All rights reserved.
-            </p>
-          </div>
         </div>
-      </div>
-
-      {/* Custom Animations */}
-      <style jsx>{`
-        @keyframes slideInFromRight {
-          0% {
-            opacity: 0;
-            transform: translateX(20px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-      `}</style>
+      </nav>
     </>
   );
-}
+};
+
+export default Navbar;

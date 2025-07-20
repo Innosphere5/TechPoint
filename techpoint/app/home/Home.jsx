@@ -1,160 +1,110 @@
-"use client"
-import React from 'react';
 import Image from 'next/image';
-import logo from '../images/logo.png';
-import Navbar from "../components/Navbar/navbar"
 
 
-export default function Home() {
+const Home = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
-      {/* Google Fonts - Montserrat */}
-      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+ 
 
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute  left-20 w-72 h-72 bg-gradient-to-r from-orange-400/20 to-red-400/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-amber-400/20 to-orange-400/20 rounded-full blur-3xl animate-pulse delay-75"></div>
-        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-r from-orange-400/10 to-yellow-400/10 rounded-full blur-3xl animate-pulse delay-150"></div>
-      </div>
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 lg:pt-20">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
 
-      {/* Navigation */}
-      <Navbar />
-
-      {/* Hero Content */}
-      <div className="px-6 md:px-12  md:py-24 relative z-10">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
-          <div className="space-y-10 animate-fadeInLeft">
-            <div className="space-y-8">
-              <div className="inline-flex items-center px-4 py-5 rounded-full bg-orange-100 text-orange-600 text-sm font-medium mb-6" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                ✨ Transform Your Career Today
-              </div>
-
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-800 leading-tight tracking-tight" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                Empower Your 
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500 animate-gradient">
-                  Future
-                </span>
-                <span className="text-slate-700 text-4xl md:text-5xl lg:text-6xl font-semibold">
-                  with Tech Skills
-                </span>
+          <div className="space-y-8">
+            <div className="space-y-6">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-montserrat leading-tight">
+                <span className="text-[#1E293B]">Empower Your</span>
+                <br />
+                <span className="text-[#6C63FF]">Tech skill</span>
+                <span className="text-[#1E293B]"> with -</span>
+                <br />
+                <span className="text-red-500">Techpoint</span>
               </h1>
 
-              <p className="text-xl md:text-2xl text-slate-600 leading-relaxed max-w-xl font-medium" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                Master <span className="text-orange-600 font-semibold">MS Excel</span>, <span className="text-orange-600 font-semibold">Photoshop</span>, <span className="text-orange-600 font-semibold">Web Development</span>, and more to thrive in today's digital landscape.
+              <p className="text-lg text-gray-600 font-montserrat max-w-md leading-relaxed">
+                Learn DCA, Programming, Designing, Tally and get certified
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-6">
-              <a href="/certificate-verify" className="group relative bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-orange-500/25 overflow-hidden inline-block text-center" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                <span className="relative z-10">Certificate Verify</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </a>
-
-              <a href="/syllabus-download" className="group relative border-2 border-orange-500 text-orange-600 hover:bg-orange-500 hover:text-white px-10 py-5 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-orange-500/25 backdrop-blur-sm bg-white/50 inline-block text-center" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                <span className="relative z-10">Syllabus Download</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
-              </a>
-            </div>
-
-            {/* Stats */}
-            <div className="flex items-center space-x-8 pt-8 border-t border-slate-200/50">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-slate-800" style={{ fontFamily: 'Montserrat, sans-serif' }}>10K+</div>
-                <div className="text-sm text-slate-600 font-medium" style={{ fontFamily: 'Montserrat, sans-serif' }}>Students</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-slate-800" style={{ fontFamily: 'Montserrat, sans-serif' }}>50+</div>
-                <div className="text-sm text-slate-600 font-medium" style={{ fontFamily: 'Montserrat, sans-serif' }}>Courses</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-slate-800" style={{ fontFamily: 'Montserrat, sans-serif' }}>95%</div>
-                <div className="text-sm text-slate-600 font-medium" style={{ fontFamily: 'Montserrat, sans-serif' }}>Success Rate</div>
-              </div>
+            {/* Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <button className="bg-[#6C63FF] text-white px-8 py-4 rounded-lg font-semibold font-montserrat hover:bg-[#5b54e6] transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                Certificate-verify
+              </button>
+              <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-semibold font-montserrat hover:border-[#6C63FF] hover:text-[#6C63FF] transition-colors duration-200">
+                Syllabus Download
+              </button>
             </div>
           </div>
 
-          {/* Right Image */}
-          <div className="relative flex justify-center lg:justify-end animate-fadeInRight">
-            <div className="relative group">
-              {/* Floating decorative elements */}
-              <div className="absolute -top-6 -left-6 w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl rotate-12 opacity-80 animate-bounce shadow-lg"></div>
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full opacity-70 animate-pulse delay-75 shadow-lg"></div>
-              <div className="absolute -bottom-8 -left-8 w-16 h-16 bg-gradient-to-r from-orange-500 to-amber-500 rounded-3xl rotate-45 opacity-60 animate-bounce delay-150 shadow-lg"></div>
-              <div className="absolute -bottom-4 -right-6 w-6 h-6 bg-gradient-to-r from-red-500 to-orange-500 rounded-full opacity-80 animate-pulse delay-300 shadow-lg"></div>
+          {/* Right Illustration */}
+          <div className="relative">
+            <div className="relative z-10">
+              {/* Main Computer/Monitor */}
+              <div className="bg-[#6C63FF] rounded-3xl p-8 shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-300">
+                <div className="bg-white rounded-2xl p-6 aspect-video">
+                  {/* Screen Content */}
+                  <div className="grid grid-cols-2 gap-4 h-full">
+                    <div className="bg-red-400 rounded-lg flex items-center justify-center">
+                      <div className="w-8 h-8 bg-white rounded opacity-80"></div>
+                    </div>
+                    <div className="bg-blue-300 rounded-lg flex items-center justify-center">
+                      <div className="w-6 h-6 bg-white rounded-full opacity-80"></div>
+                    </div>
+                    <div className="bg-yellow-300 rounded-lg flex items-center justify-center">
+                      <div className="w-8 h-6 bg-white rounded opacity-80"></div>
+                    </div>
+                    <div className="bg-green-300 rounded-lg flex items-center justify-center">
+                      <div className="w-6 h-8 bg-white rounded opacity-80"></div>
+                    </div>
+                  </div>
+                </div>
 
-              {/* Main image container */}
-              <div className="relative bg-gradient-to-br from-white/30 to-white/10 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-white/20 group-hover:scale-105 transition-transform duration-500">
-                <Image
-                  src={logo}
-                  alt="Tech Skills Learning Illustration" 
-                  className="w-full max-w-md lg:max-w-lg h-auto object-contain drop-shadow-2xl"
-                />
-
-                {/* Glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-400/20 to-red-400/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+                {/* Monitor Stand */}
+                <div className="w-16 h-6 bg-[#5b54e6] rounded-b-lg mx-auto -mb-2"></div>
+                <div className="w-24 h-4 bg-[#4c45d9] rounded-full mx-auto"></div>
               </div>
+
+              {/* Floating Elements */}
+              {/* Graduation Cap */}
+              <div className="absolute -top-8 -left-8 w-16 h-16 bg-[#1E293B] rounded-lg transform -rotate-12 shadow-lg">
+                <div className="absolute inset-2 bg-[#6C63FF] rounded"></div>
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-[#1E293B] transform rotate-45"></div>
+              </div>
+
+              {/* Floating Person Icons */}
+              <div className="absolute -right-12 top-12 w-12 h-12 bg-[#6C63FF] rounded-full shadow-lg flex items-center justify-center">
+                <div className="w-6 h-6 bg-white rounded-full"></div>
+              </div>
+
+              <div className="absolute -left-6 bottom-12 w-10 h-10 bg-orange-400 rounded-full shadow-lg flex items-center justify-center">
+                <div className="w-4 h-4 bg-white rounded-full"></div>
+              </div>
+
+              {/* Books Stack */}
+              <div className="absolute -bottom-6 -left-12 space-y-1">
+                <div className="w-20 h-3 bg-[#6C63FF] rounded shadow-md"></div>
+                <div className="w-18 h-3 bg-red-400 rounded shadow-md ml-1"></div>
+                <div className="w-16 h-3 bg-blue-400 rounded shadow-md ml-2"></div>
+              </div>
+
+              {/* Floating Geometric Shapes */}
+              <div className="absolute top-1/4 -right-16 w-8 h-8 bg-pink-300 rounded-full opacity-60 animate-bounce"></div>
+              <div className="absolute bottom-1/4 -left-8 w-6 h-6 bg-blue-300 transform rotate-45 opacity-60"></div>
+              <div className="absolute top-3/4 right-8 w-4 h-4 bg-yellow-300 rounded-full opacity-60"></div>
+            </div>
+
+            {/* Background Decorative Elements */}
+            <div className="absolute inset-0 -z-10">
+              <div className="absolute top-12 left-12 w-32 h-32 bg-purple-200 rounded-full opacity-30 blur-xl"></div>
+              <div className="absolute bottom-12 right-12 w-40 h-40 bg-blue-200 rounded-full opacity-30 blur-xl"></div>
+              <div className="absolute top-1/2 left-0 w-24 h-24 bg-pink-200 rounded-full opacity-30 blur-xl"></div>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Enhanced Background decorative elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-gradient-to-r from-orange-400 to-red-400 rounded-full opacity-60 animate-pulse shadow-lg"></div>
-        <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-gradient-to-r from-amber-400 to-orange-400 rounded-full opacity-50 animate-pulse delay-75 shadow-lg"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-4 h-4 bg-gradient-to-r from-orange-400 to-amber-400 rounded-full opacity-40 animate-pulse delay-150 shadow-lg"></div>
-        <div className="absolute top-1/2 right-1/4 w-2 h-2 bg-gradient-to-r from-orange-400 to-yellow-400 rounded-full opacity-70 animate-pulse delay-300 shadow-lg"></div>
-        <div className="absolute bottom-1/3 right-1/2 w-3 h-3 bg-gradient-to-r from-red-400 to-orange-400 rounded-full opacity-50 animate-pulse delay-500 shadow-lg"></div>
-      </div>
-
-      {/* Custom CSS for animations */}
-      <style jsx>{`
-        @keyframes fadeInLeft {
-          from {
-            opacity: 0;
-            transform: translateX(-30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
-        @keyframes fadeInRight {
-          from {
-            opacity: 0;
-            transform: translateX(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
-        @keyframes gradient {
-          0%, 100% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-        }
-
-        .animate-fadeInLeft {
-          animation: fadeInLeft 0.8s ease-out;
-        }
-
-        .animate-fadeInRight {
-          animation: fadeInRight 0.8s ease-out 0.2s both;
-        }
-
-        .animate-gradient {
-          background-size: 200% 200%;
-          animation: gradient 3s ease infinite;
-        }
-      `}</style>
+      </main>
     </div>
   );
-}
+};
+
+export default Home;
