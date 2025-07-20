@@ -26,10 +26,16 @@ const Navbar = () => {
                 <Image
                   src={techpoint} 
                   alt="TechPoint Logo" 
-                  className="w-10 h-10 sm:w-12 sm:h-12 object-contain rounded-lg shadow-sm"
+                  width={48}
+                  height={48}
+                  className="w-12 h-12 object-contain rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200"
                 />
               </div>
-
+              <div className="hidden sm:block">
+                <h1 className="text-xl font-bold font-montserrat text-gray-800">
+                  TECH<span className="text-[#6C63FF]">POINT</span>
+                </h1>
+              </div>
             </div>
 
             {/* Desktop Navigation Links */}
@@ -183,13 +189,15 @@ const Navbar = () => {
             {/* Mobile Menu Footer */}
             <div className="px-6 py-4 bg-gray-50">
               <div className="flex items-center space-x-3">
-                <img 
-                  src="/logo.jpg" 
+                <Image 
+                  src={techpoint}
                   alt="TechPoint Logo" 
+                  width={32}
+                  height={32}
                   className="w-8 h-8 object-contain rounded-md"
                 />
                 <span className="text-sm font-medium text-gray-600 font-montserrat">
-                  TECH<span className="text-red-500">POINT</span>
+                  TECH<span className="text-[#6C63FF]">POINT</span>
                 </span>
               </div>
             </div>
