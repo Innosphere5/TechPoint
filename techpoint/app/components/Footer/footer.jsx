@@ -54,7 +54,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
+    <footer className="bg-gradient-to-br from-[#6C63FF] via-purple-700 to-indigo-800 text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20"></div>
@@ -67,7 +67,7 @@ const Footer = () => {
       </div>
 
       {/* Stats Section */}
-      <div className="relative border-b border-slate-700/50">
+      <div className="relative border-b border-white/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => {
@@ -75,7 +75,7 @@ const Footer = () => {
               return (
                 <div key={index} className="text-center group">
                   <div className="flex justify-center mb-4">
-                    <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-full p-3 group-hover:scale-110 transition-transform duration-300">
+                    <div className="bg-gradient-to-r from-blue-400 to-purple-500 rounded-full p-3 group-hover:scale-110 transition-transform duration-300">
                       <IconComponent className="w-6 h-6 text-white" />
                     </div>
                   </div>
@@ -120,22 +120,22 @@ const Footer = () => {
               {/* Contact Info */}
               <div className="space-y-3">
                 <div className="flex items-start space-x-3">
-                  <MapPin className="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" />
-                  <p className="text-slate-300 text-sm">
-                    Near Bus Stand, Main Market<br />
-                    Jalandhar, Punjab 144001
+                  <MapPin className="w-5 h-5 text-blue-300 mt-0.5 flex-shrink-0" />
+                  <p className="text-slate-200 text-sm">
+                    Bassi Pathana, F.G.S<br />
+                    Punjab, India
                   </p>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Phone className="w-5 h-5 text-blue-400 flex-shrink-0" />
-                  <a href="tel:+919876543210" className="text-slate-300 hover:text-white transition-colors text-sm">
-                    +91 98765 43210
+                  <Phone className="w-5 h-5 text-blue-300 flex-shrink-0" />
+                  <a href="tel:+917340747117" className="text-slate-200 hover:text-white transition-colors text-sm">
+                    7340747117
                   </a>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Mail className="w-5 h-5 text-blue-400 flex-shrink-0" />
-                  <a href="mailto:info@techpoint.edu" className="text-slate-300 hover:text-white transition-colors text-sm">
-                    info@techpoint.edu
+                  <Mail className="w-5 h-5 text-blue-300 flex-shrink-0" />
+                  <a href="mailto:gktechp931@gmail.com" className="text-slate-200 hover:text-white transition-colors text-sm">
+                    gktechp931@gmail.com
                   </a>
                 </div>
               </div>
@@ -225,7 +225,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="relative border-t border-slate-700/50">
+      <div className="relative border-t border-white/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-slate-400 text-sm text-center md:text-left">
