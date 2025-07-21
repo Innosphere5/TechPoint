@@ -142,8 +142,8 @@ const CertificateVerify = () => {
                       disabled={!registrationNumber.trim() || isVerifying}
                       className="w-full relative overflow-hidden group"
                     >
-                      <div className="absolute inset-0 bg-gradient-to-r from-[#6C63FF] to-purple-600 rounded-xl opacity-100 group-hover:opacity-90 transition duration-300"></div>
-                      <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-purple-700 rounded-xl opacity-0 group-hover:opacity-100 transition duration-300"></div>
+                      <div className="absolute inset-0 bg-[#6C63FF] rounded-xl opacity-100 group-hover:opacity-90 transition duration-300"></div>
+                      
 
                       <div className="relative px-8 py-4 text-white font-semibold text-lg rounded-xl flex items-center justify-center space-x-3 transform group-hover:scale-105 transition-transform duration-200">
                         {isVerifying ? (

@@ -54,8 +54,8 @@ const SyllabusDownloadPage = () => {
   };
 
   return (
-    <main className="pt-16 sm:pt-20 min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <main className="pt-10 sm:pt-20 min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
         {/* Header Section */}
         <div className="text-center mb-12 sm:mb-16">
           <div className="relative inline-block mb-4 sm:mb-6">
@@ -65,9 +65,7 @@ const SyllabusDownloadPage = () => {
                 Syllabus
               </span>
             </h1>
-            {/* Decorative elements */}
-            <div className="absolute -top-2 sm:-top-4 -right-2 sm:-right-4 w-6 h-6 sm:w-8 sm:h-8 bg-orange-400 rounded-full opacity-20 animate-bounce"></div>
-            <div className="absolute -bottom-1 sm:-bottom-2 -left-1 sm:-left-2 w-4 h-4 sm:w-6 sm:h-6 bg-red-400 rounded-full opacity-30 animate-bounce delay-500"></div>
+         
           </div>
 
         </div>
@@ -122,8 +120,8 @@ const SyllabusDownloadPage = () => {
                           onClick={() => handleDownload(syllabus)}
                           className="group/btn relative overflow-hidden w-full"
                         >
-                          <div className="absolute inset-0 bg-gradient-to-r from-[#6C63FF] to-purple-600 rounded-xl opacity-100 group-hover/btn:opacity-90 transition duration-300"></div>
-                          <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-purple-700 rounded-xl opacity-0 group-hover/btn:opacity-100 transition duration-300"></div>
+                          <div className="absolute inset-0 bg-[#6C63FF] rounded-xl opacity-100 group-hover/btn:opacity-90 transition duration-300"></div>
+                        
 
                           <div className="relative flex items-center justify-center space-x-2 px-4 py-3 text-white font-semibold text-base rounded-xl transform group-hover/btn:scale-105 transition-transform duration-200">
                             <Download className="w-4 h-4 group-hover/btn:animate-bounce" />
@@ -164,8 +162,8 @@ const SyllabusDownloadPage = () => {
                           onClick={() => handleDownload(syllabus)}
                           className="group/btn relative overflow-hidden w-full"
                         >
-                          <div className="absolute inset-0 bg-gradient-to-r from-[#6C63FF] to-purple-600 rounded-xl opacity-100 group-hover/btn:opacity-90 transition duration-300"></div>
-                          <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-purple-700 rounded-xl opacity-0 group-hover/btn:opacity-100 transition duration-300"></div>
+                          <div className="absolute inset-0 bg-[#6C63FF] rounded-xl opacity-100 group-hover/btn:opacity-90 transition duration-300"></div>
+                     
 
                           <div className="relative flex items-center justify-center space-x-2 lg:space-x-3 px-4 lg:px-6 py-3 lg:py-4 text-white font-semibold text-base lg:text-lg rounded-xl transform group-hover/btn:scale-105 transition-transform duration-200">
                             <Download className="w-4 h-4 lg:w-5 lg:h-5 group-hover/btn:animate-bounce" />

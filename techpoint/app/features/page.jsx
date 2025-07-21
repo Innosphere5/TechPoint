@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import certificate from "../images/certificate.jpg"
 import quiz from "../images/quiz.jpg"
 import syllabus from "../images/syllabus.jpg"
@@ -13,7 +14,6 @@ export default function WebsiteFeatures() {
             Website Features
           </h1>
         </div>
-
         {/* Features Grid */}
         <div className="grid md:grid-cols-3 gap-15 max-w-6xl mx-auto mt-25">
           {/* Certificate Verification Card */}
@@ -28,18 +28,17 @@ export default function WebsiteFeatures() {
                 />
               </div>
             </div>
-
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-800">
+              <h3 className="text-lg font-medium text-gray-800">
                 Verified your course Certificate with entering registration number
               </h3>
-
-              <button className="w-full bg-[#6C63FF] text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg mt-3">
-                Certificate Verification
-              </button>
+              <Link href="/certificate-verify">
+                <button className="w-full bg-[#6C63FF] text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg mt-3">
+                  Certificate Verification
+                </button>
+              </Link>
             </div>
           </div>
-
           {/* Quiz Test Card */}
           <div className="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-300">
             <div className="mb-6">
@@ -52,18 +51,17 @@ export default function WebsiteFeatures() {
                 />
               </div>
             </div>
-
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-800">
+              <h3 className="text-lg font-medium text-gray-800">
                 Check your Skill knowledge with solving computer quiz test now
               </h3>
-
-              <button className="w-full bg-[#6C63FF] text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg mt-3">
-                Quiz Test
-              </button>
+              <Link href="/quiz-test">
+                <button className="w-full bg-[#6C63FF] text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg mt-3">
+                  Quiz Test
+                </button>
+              </Link>
             </div>
           </div>
-
           {/* Syllabus Download Card */}
           <div className="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-300">
             <div className="mb-6">
@@ -76,15 +74,15 @@ export default function WebsiteFeatures() {
                 />
               </div>
             </div>
-
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-800">
+              <h3 className="text-lg font-medium text-gray-800">
                 Download your syllabus of DCA, Programming, Designing, Tally, Ms Excel.
               </h3>
-
-              <button className="w-full bg-[#6C63FF] text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg mt-3">
-                Syllabus Download
-              </button>
+              <Link href="/syllabus-download">
+                <button className="w-full bg-[#6C63FF] text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg mt-3">
+                  Syllabus Download
+                </button>
+              </Link>
             </div>
           </div>
         </div>

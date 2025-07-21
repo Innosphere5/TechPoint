@@ -76,9 +76,9 @@ const ContactPage = () => {
 
   return (
     <main className="pt-20 min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50">
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold text-slate-800 mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold text-blue-600 mb-6">
             Contact Us
           </h1>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
@@ -117,7 +117,7 @@ const ContactPage = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-slate-800">Address</h3>
-                  <p className="text-slate-600">Bassi Pathana , F.G.S, Punjab</p>
+                  <p className="text-slate-600">Bassi Pathana , F.G.S , Punjab</p>
                 </div>
               </div>
 
@@ -127,7 +127,7 @@ const ContactPage = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-slate-800">Hours</h3>
-                  <p className="text-slate-600">Mon-Sat: 9AM-8PM</p>
+                  <p className="text-slate-600">Mon-Fri: 9AM-6PM</p>
                 </div>
               </div>
             </div>
@@ -228,7 +228,7 @@ const ContactPage = () => {
                 type="button"
                 onClick={handleSubmit}
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-blue-600 to-blue-900 text-white py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center space-x-2"
+                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 rounded-lg font-semibold hover:from-blue-800 hover:to-blue-900 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center space-x-2"
               >
                 {isSubmitting ? (
                   <>
