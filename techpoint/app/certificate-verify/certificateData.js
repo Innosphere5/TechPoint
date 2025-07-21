@@ -22,13 +22,13 @@ export const certificateDatabase = {
   },
   '658': {
     name: 'Maninder Kaur',
-    pdfPath: '/certificates/KIRANJOT.pdf',
+    pdfPath: '/certificates/maninder kaur.pdf',
     course: 'Digital Computer Application',
     issueDate: '05-04-2025'
   },
   '656': {
     name: 'Navdeep Singh',
-    pdfPath: '/certificates/KIRANJOT.pdf',
+    pdfPath: '/certificates/NAVDEEP SINGH.pdf',
     course: 'Digital Computer Application',
     issueDate: '15-11-2024'
   },
