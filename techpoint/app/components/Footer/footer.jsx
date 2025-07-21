@@ -54,7 +54,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-br from-[#6C63FF] via-purple-700 to-indigo-800 text-white relative overflow-hidden">
+    <footer className="bg-[#6C63FF]  text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20"></div>
@@ -114,7 +114,7 @@ const Footer = () => {
               </div>
               
               <p className="text-slate-300 leading-relaxed text-sm">
-                Empowering students with comprehensive technology education. We provide quality training in computer applications, design, and professional skills to help you excel in your career.
+               We provide quality training in computer applications, design, and professional skills to help you excel in your career.
               </p>
 
               {/* Contact Info */}
@@ -193,32 +193,7 @@ const Footer = () => {
                 ))}
               </ul>
 
-              {/* Social Media */}
-              <div className="pt-4">
-                <h5 className="text-white font-semibold mb-4 font-montserrat">Follow Us</h5>
-                <div className="flex space-x-3">
-                  {[
-                    { icon: Facebook, href: '#', color: 'hover:text-blue-500' },
-                    { icon: Instagram, href: '#', color: 'hover:text-pink-500' },
-                    { icon: Twitter, href: '#', color: 'hover:text-blue-400' },
-                    { icon: Linkedin, href: '#', color: 'hover:text-blue-600' },
-                    { icon: Youtube, href: '#', color: 'hover:text-red-500' }
-                  ].map((social, index) => {
-                    const IconComponent = social.icon;
-                    return (
-                      <a
-                        key={index}
-                        href={social.href}
-                        className={`bg-slate-700 hover:bg-slate-600 text-slate-300 ${social.color} p-2 rounded-lg transition-all duration-300 transform hover:scale-110 hover:shadow-lg`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <IconComponent className="w-5 h-5" />
-                      </a>
-                    );
-                  })}
-                </div>
-              </div>
+            
             </div>
           </div>
         </div>
