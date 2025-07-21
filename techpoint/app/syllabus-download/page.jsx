@@ -61,7 +61,7 @@ const SyllabusDownloadPage = () => {
           <div className="relative inline-block mb-4 sm:mb-6">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 leading-tight font-sans">
               Download Your Course 
-              <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent block mt-1 sm:mt-2">
+              <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent block mt-1 sm:mt-2">
                 Syllabus
               </span>
             </h1>
