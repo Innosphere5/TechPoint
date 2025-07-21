@@ -1,6 +1,7 @@
+
 "use client"
 import React, { useState, useRef } from "react";
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle, AlertCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle, AlertCircle, User, MessageSquare, Star } from "lucide-react";
 
 const ContactPage = () => {
   const form = useRef();
@@ -42,19 +43,6 @@ const ContactPage = () => {
       // Simulate API call since EmailJS won't work in this environment
       await new Promise(resolve => setTimeout(resolve, 2000));
 
-      // In a real application, you would use EmailJS like this:
-      /*
-      const emailjs = await import('https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js');
-      emailjs.default.init(EMAILJS_PUBLIC_KEY);
-
-      const result = await emailjs.default.sendForm(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        form.current,
-        EMAILJS_PUBLIC_KEY
-      );
-      */
-
       console.log('Email sent successfully (simulated)');
       setSubmitStatus('success');
 
@@ -75,174 +63,326 @@ const ContactPage = () => {
   };
 
   return (
-    <main className="pt-20 min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold text-blue-600 mb-6">
+    <main className="pt-16 min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+      {/* Hero Section */}
+      <div className="relative bg-gradient-to-r from-[#6C63FF] to-indigo-600 py-16 md:py-20">
+        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="relative container mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6" style={{ fontFamily: 'Montserrat, sans-serif' }}>
             Contact Us
           </h1>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Get in touch with us for any questions about our courses or services.
+          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+            Have a question about our courses or need assistance? We're here to help you start your tech journey.
           </p>
+          <div className="mt-8 flex justify-center">
+            <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-3">
+              <p className="text-white font-medium">Available Mon-Fri, 9AM-6PM</p>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <div className="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Contact Information */}
-          <div className="bg-white rounded-xl shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-slate-800 mb-6">Get in Touch</h2>
-            <div className="space-y-6">
-              <div className="flex items-center space-x-4">
-                <div className="bg-orange-100 rounded-lg p-3">
-                  <Phone className="w-6 h-6 text-orange-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-slate-800">Phone</h3>
-                  <p className="text-slate-600">7340747117</p>
+      <div className="container mx-auto px-4 py-16">
+        <div className="max-w-7xl mx-auto">
+          {/* Quick Contact Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 -mt-24 relative z-10">
+            <div className="bg-white rounded-2xl shadow-xl p-8 text-center hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="bg-gradient-to-r from-blue-500 to-blue-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Phone className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-slate-800 mb-3">Call Us</h3>
+              <a href="tel:+917340747117" className="text-2xl font-semibold text-[#6C63FF] hover:text-blue-700 transition-colors">
+                7340747117
+              </a>
+              <p className="text-slate-600 mt-2">Mon-Fri 9AM-6PM</p>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-xl p-8 text-center hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="bg-gradient-to-r from-green-500 to-green-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Mail className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-slate-800 mb-3">Email Us</h3>
+              <a href="mailto:gktechp931@gmail.com" className="text-lg font-semibold text-[#6C63FF] hover:text-blue-700 transition-colors break-all">
+                gktechp931@gmail.com
+              </a>
+              <p className="text-slate-600 mt-2">We reply within 24hrs</p>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-xl p-8 text-center hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="bg-gradient-to-r from-purple-500 to-purple-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <MapPin className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-slate-800 mb-3">Visit Us</h3>
+              <p className="text-lg text-slate-700 font-medium">Bassi Pathana</p>
+              <p className="text-slate-600">F.G.S, Punjab</p>
+            </div>
+          </div>
+
+          {/* Main Contact Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+            {/* Contact Information */}
+            <div className="lg:col-span-2 space-y-8">
+              <div>
+                <h2 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-6" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                  Let's Start a Conversation
+                </h2>
+                <p className="text-lg text-slate-600 leading-relaxed">
+                  Ready to transform your career with our comprehensive tech courses? Get in touch with our expert team for personalized guidance.
+                </p>
+              </div>
+
+              {/* Contact Details */}
+              <div className="bg-white rounded-2xl shadow-lg p-8 space-y-6">
+                <h3 className="text-2xl font-bold text-slate-800 mb-6">Contact Information</h3>
+                
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-blue-100 rounded-lg p-3 flex-shrink-0">
+                      <Phone className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-slate-800 text-lg">Phone Number</h4>
+                      <a href="tel:+917340747117" className="text-slate-600 hover:text-[#6C63FF] transition-colors text-lg">
+                        +91 7340747117
+                      </a>
+                      <p className="text-sm text-slate-500 mt-1">Available for calls & WhatsApp</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-green-100 rounded-lg p-3 flex-shrink-0">
+                      <Mail className="w-6 h-6 text-green-600" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-slate-800 text-lg">Email Address</h4>
+                      <a href="mailto:gktechp931@gmail.com" className="text-slate-600 hover:text-[#6C63FF] transition-colors">
+                        gktechp931@gmail.com
+                      </a>
+                      <p className="text-sm text-slate-500 mt-1">Response within 24 hours</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-purple-100 rounded-lg p-3 flex-shrink-0">
+                      <MapPin className="w-6 h-6 text-purple-600" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-slate-800 text-lg">Office Address</h4>
+                      <p className="text-slate-600">Bassi Pathana, F.G.S</p>
+                      <p className="text-slate-600">Punjab, India</p>
+                      <p className="text-sm text-slate-500 mt-1">Visit by appointment</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-orange-100 rounded-lg p-3 flex-shrink-0">
+                      <Clock className="w-6 h-6 text-orange-600" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-slate-800 text-lg">Office Hours</h4>
+                      <div className="text-slate-600 space-y-1">
+                        <p><span className="font-medium">Monday - Friday:</span> 9:00 AM - 6:00 PM</p>
+                        <p><span className="font-medium">Saturday:</span> 10:00 AM - 4:00 PM</p>
+                        <p><span className="font-medium">Sunday:</span> Closed</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex items-center space-x-4">
-                <div className="bg-orange-100 rounded-lg p-3">
-                  <Mail className="w-6 h-6 text-orange-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-slate-800">Email</h3>
-                  <p className="text-slate-600">gktechp931@gmail.com</p>
+              {/* Why Choose Us */}
+              <div className="bg-gradient-to-r from-[#6C63FF] to-indigo-600 rounded-2xl p-8 text-white">
+                <h3 className="text-2xl font-bold mb-6">Why Choose TechPoint?</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3">
+                    <Star className="w-5 h-5 text-yellow-300 flex-shrink-0" />
+                    <span>Expert instructors with industry experience</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Star className="w-5 h-5 text-yellow-300 flex-shrink-0" />
+                    <span>Hands-on practical training approach</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Star className="w-5 h-5 text-yellow-300 flex-shrink-0" />
+                    <span>Industry-recognized certifications</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Star className="w-5 h-5 text-yellow-300 flex-shrink-0" />
+                    <span>Flexible learning schedules</span>
+                  </div>
                 </div>
               </div>
+            </div>
 
-              <div className="flex items-center space-x-4">
-                <div className="bg-orange-100 rounded-lg p-3">
-                  <MapPin className="w-6 h-6 text-orange-600" />
+            {/* Contact Form */}
+            <div className="lg:col-span-3">
+              <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-10">
+                <div className="mb-8">
+                  <h2 className="text-3xl font-bold text-slate-800 mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                    Send Us a Message
+                  </h2>
+                  <p className="text-slate-600 text-lg">
+                    Fill out the form below and we'll get back to you as soon as possible.
+                  </p>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-slate-800">Address</h3>
-                  <p className="text-slate-600">Bassi Pathana , F.G.S , Punjab</p>
-                </div>
-              </div>
 
-              <div className="flex items-center space-x-4">
-                <div className="bg-orange-100 rounded-lg p-3">
-                  <Clock className="w-6 h-6 text-orange-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-slate-800">Hours</h3>
-                  <p className="text-slate-600">Mon-Fri: 9AM-6PM</p>
+                {/* Success/Error Messages */}
+                {submitStatus === 'success' && (
+                  <div className="mb-6 p-4 bg-green-50 border-l-4 border-green-400 rounded-r-lg flex items-start space-x-3">
+                    <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <h4 className="font-semibold text-green-800">Message sent successfully!</h4>
+                      <p className="text-green-700">We'll get back to you within 24 hours.</p>
+                    </div>
+                  </div>
+                )}
+
+                {submitStatus === 'error' && (
+                  <div className="mb-6 p-4 bg-red-50 border-l-4 border-red-400 rounded-r-lg flex items-start space-x-3">
+                    <AlertCircle className="w-6 h-6 text-red-600 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <h4 className="font-semibold text-red-800">Failed to send message</h4>
+                      <p className="text-red-700">Please try again or contact us directly.</p>
+                    </div>
+                  </div>
+                )}
+
+                {submitStatus === 'validation' && (
+                  <div className="mb-6 p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-r-lg flex items-start space-x-3">
+                    <AlertCircle className="w-6 h-6 text-yellow-600 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <h4 className="font-semibold text-yellow-800">Please fill in all fields</h4>
+                      <p className="text-yellow-700">All fields marked with * are required.</p>
+                    </div>
+                  </div>
+                )}
+
+                <form ref={form} onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="relative">
+                      <label className="block text-sm font-semibold text-slate-700 mb-3">
+                        <User className="w-4 h-4 inline mr-2" />
+                        Your Name <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        disabled={isSubmitting}
+                        required
+                        className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#6C63FF] focus:ring-4 focus:ring-[#6C63FF]/10 disabled:bg-gray-50 disabled:cursor-not-allowed transition-all duration-300 text-lg"
+                        placeholder="Enter your full name"
+                      />
+                    </div>
+
+                    <div className="relative">
+                      <label className="block text-sm font-semibold text-slate-700 mb-3">
+                        <Mail className="w-4 h-4 inline mr-2" />
+                        Email Address <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        disabled={isSubmitting}
+                        required
+                        className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#6C63FF] focus:ring-4 focus:ring-[#6C63FF]/10 disabled:bg-gray-50 disabled:cursor-not-allowed transition-all duration-300 text-lg"
+                        placeholder="your.email@example.com"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-slate-700 mb-3">
+                      <MessageSquare className="w-4 h-4 inline mr-2" />
+                      Subject <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleInputChange}
+                      disabled={isSubmitting}
+                      required
+                      className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#6C63FF] focus:ring-4 focus:ring-[#6C63FF]/10 disabled:bg-gray-50 disabled:cursor-not-allowed transition-all duration-300 text-lg"
+                      placeholder="What's this about?"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-slate-700 mb-3">
+                      <MessageSquare className="w-4 h-4 inline mr-2" />
+                      Message <span className="text-red-500">*</span>
+                    </label>
+                    <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      disabled={isSubmitting}
+                      rows="6"
+                      required
+                      className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#6C63FF] focus:ring-4 focus:ring-[#6C63FF]/10 disabled:bg-gray-50 disabled:cursor-not-allowed transition-all duration-300 resize-none text-lg"
+                      placeholder="Tell us more about your inquiry or how we can help you..."
+                    ></textarea>
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-[#6C63FF] to-indigo-600 text-white py-4 px-8 rounded-xl font-bold text-lg hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-[1.02] hover:shadow-2xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center space-x-3 shadow-lg"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white"></div>
+                        <span>Sending Message...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-6 h-6" />
+                        <span>Send Message</span>
+                      </>
+                    )}
+                  </button>
+                </form>
+
+                <div className="mt-8 pt-6 border-t border-gray-200">
+                  <p className="text-sm text-slate-500 text-center">
+                    By submitting this form, you agree to our privacy policy and terms of service.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
 
-          {/* Contact Form */}
-          <div className="bg-white rounded-xl shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-slate-800 mb-6">Send Message</h2>
-
-            {/* Success/Error Messages */}
-            {submitStatus === 'success' && (
-              <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center space-x-3">
-                <CheckCircle className="w-5 h-5 text-green-600" />
-                <p className="text-green-800">Message sent successfully! We'll get back to you soon.</p>
-              </div>
-            )}
-
-            {submitStatus === 'error' && (
-              <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center space-x-3">
-                <AlertCircle className="w-5 h-5 text-red-600" />
-                <p className="text-red-800">Failed to send message. Please try again or contact us directly.</p>
-              </div>
-            )}
-
-            {submitStatus === 'validation' && (
-              <div className="mb-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg flex items-center space-x-3">
-                <AlertCircle className="w-5 h-5 text-yellow-600" />
-                <p className="text-yellow-800">Please fill in all required fields.</p>
-              </div>
-            )}
-
-            <div ref={form} className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
-                  Name <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  disabled={isSubmitting}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 disabled:bg-gray-50 disabled:cursor-not-allowed"
-                  placeholder="Your Name"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
-                  Email <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  disabled={isSubmitting}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 disabled:bg-gray-50 disabled:cursor-not-allowed"
-                  placeholder="your.email@example.com"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
-                  Subject <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleInputChange}
-                  disabled={isSubmitting}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 disabled:bg-gray-50 disabled:cursor-not-allowed"
-                  placeholder="Subject"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
-                  Message <span className="text-red-500">*</span>
-                </label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  disabled={isSubmitting}
-                  rows="4"
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 disabled:bg-gray-50 disabled:cursor-not-allowed"
-                  placeholder="Your message..."
-                ></textarea>
-              </div>
-
-              <button
-                type="button"
-                onClick={handleSubmit}
-                disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 rounded-lg font-semibold hover:from-blue-800 hover:to-blue-900 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center space-x-2"
-              >
-                {isSubmitting ? (
-                  <>
-                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                    <span>Sending...</span>
-                  </>
-                ) : (
-                  <>
-                    <Send className="w-5 h-5" />
-                    <span>Send Message</span>
-                  </>
-                )}
-              </button>
-            </div>
+      {/* Call to Action Section */}
+      <div className="bg-gradient-to-r from-slate-900 to-slate-800 py-16">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            Ready to Start Your Tech Journey?
+          </h2>
+          <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+            Join hundreds of students who have transformed their careers with our expert training programs.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a 
+              href="https://wa.me/917340747117" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center justify-center space-x-2"
+            >
+              <Phone className="w-5 h-5" />
+              <span>WhatsApp Now</span>
+            </a>
+            <a 
+              href="/courses" 
+              className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center space-x-2"
+            >
+              <span>View Courses</span>
+            </a>
           </div>
         </div>
       </div>
