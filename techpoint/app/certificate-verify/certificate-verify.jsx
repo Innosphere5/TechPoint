@@ -81,7 +81,7 @@ const CertificateVerify = () => {
         <div className="w-full max-w-2xl mx-4">
           <div className="relative group">
             {/* Card Glow Effect */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-orange-500 to-red-500 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+            <div className="absolute -inset-1 bg-gradient-to-r from-[#6C63FF] to-purple-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
 
             {/* Main Card */}
             <div className="relative bg-white rounded-3xl shadow-2xl p-8 transform hover:scale-105 transition-all duration-300">
@@ -92,7 +92,7 @@ const CertificateVerify = () => {
                     <div className="relative inline-block">
                       <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-6 shadow-lg">
                         <div className="relative">
-                          <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-xl p-4 shadow-lg">
+                          <div className="bg-gradient-to-r from-[#6C63FF] to-purple-600 rounded-xl p-4 shadow-lg">
                             <CheckCircle className="w-8 h-8 text-white" />
                           </div>
                           <div className="absolute -top-1 -right-1 bg-green-400 rounded-full w-6 h-6 flex items-center justify-center">
@@ -114,13 +114,13 @@ const CertificateVerify = () => {
                         Registration Number
                       </label>
                       <div className="relative group">
-                        <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl blur opacity-20 group-hover:opacity-30 transition duration-300"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#6C63FF] to-purple-600 rounded-xl blur opacity-20 group-hover:opacity-30 transition duration-300"></div>
                         <input
                           type="text"
                           value={registrationNumber}
                           onChange={(e) => setRegistrationNumber(e.target.value)}
                           placeholder="Enter your certificate number (e.g., 400)"
-                          className="relative w-full px-6 py-4 bg-gray-50 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-orange-500 focus:bg-white transition-all duration-300 text-gray-700 placeholder-gray-400"
+                          className="relative w-full px-6 py-4 bg-gray-50 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-[#6C63FF] focus:bg-white transition-all duration-300 text-gray-700 placeholder-gray-400"
                           disabled={isVerifying}
                         />
                         <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
@@ -142,8 +142,8 @@ const CertificateVerify = () => {
                       disabled={!registrationNumber.trim() || isVerifying}
                       className="w-full relative overflow-hidden group"
                     >
-                      <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl opacity-100 group-hover:opacity-90 transition duration-300"></div>
-                      <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-red-600 rounded-xl opacity-0 group-hover:opacity-100 transition duration-300"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#6C63FF] to-purple-600 rounded-xl opacity-100 group-hover:opacity-90 transition duration-300"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-purple-700 rounded-xl opacity-0 group-hover:opacity-100 transition duration-300"></div>
 
                       <div className="relative px-8 py-4 text-white font-semibold text-lg rounded-xl flex items-center justify-center space-x-3 transform group-hover:scale-105 transition-transform duration-200">
                         {isVerifying ? (
@@ -259,7 +259,7 @@ const CertificateVerify = () => {
             <h3 className="text-lg font-semibold text-gray-800 mb-4">Sample Registration Numbers:</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
               {getAllRegistrationNumbers().map((regNo) => (
-                <div key={regNo} className="bg-orange-50 text-orange-700 px-3 py-2 rounded-lg font-mono text-center">
+                <div key={regNo} className="bg-purple-50 text-[#6C63FF] px-3 py-2 rounded-lg font-mono text-center">
                   {regNo}
                 </div>
               ))}
