@@ -97,7 +97,7 @@ const ContactPage = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-slate-800">Phone</h3>
-                  <p className="text-slate-600">+1 (555) 123-4567</p>
+                  <p className="text-slate-600">7340747117</p>
                 </div>
               </div>
 
@@ -107,7 +107,7 @@ const ContactPage = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-slate-800">Email</h3>
-                  <p className="text-slate-600">info@techpoint.com</p>
+                  <p className="text-slate-600">gktechp931@gmail.com</p>
                 </div>
               </div>
 
@@ -117,7 +117,7 @@ const ContactPage = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-slate-800">Address</h3>
-                  <p className="text-slate-600">123 Tech Street, New York, NY 10001</p>
+                  <p className="text-slate-600">Bassi Pathana , F.G.S, Punjab</p>
                 </div>
               </div>
 
@@ -127,7 +127,7 @@ const ContactPage = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-slate-800">Hours</h3>
-                  <p className="text-slate-600">Mon-Fri: 9AM-6PM</p>
+                  <p className="text-slate-600">Mon-Sat: 9AM-8PM</p>
                 </div>
               </div>
             </div>
@@ -228,7 +228,7 @@ const ContactPage = () => {
                 type="button"
                 onClick={handleSubmit}
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center space-x-2"
+                className="w-full bg-gradient-to-r from-blue-600 to-blue-900 text-white py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center space-x-2"
               >
                 {isSubmitting ? (
                   <>
