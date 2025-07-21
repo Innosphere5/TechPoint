@@ -14,6 +14,24 @@ export const certificateDatabase = {
     course: 'Digital Computer Application',
     issueDate: '10-01-2025'
   },
+  '655': {
+    name: 'Kiranjot Kaur',
+    pdfPath: '/certificates/KIRANJOT.pdf',
+    course: 'Digital Computer Application',
+    issueDate: '05-01-2024'
+  },
+  '658': {
+    name: 'Maninder Kaur',
+    pdfPath: '/certificates/KIRANJOT.pdf',
+    course: 'Digital Computer Application',
+    issueDate: '05-04-2025'
+  },
+  '656': {
+    name: 'Navdeep Singh',
+    pdfPath: '/certificates/KIRANJOT.pdf',
+    course: 'Digital Computer Application',
+    issueDate: '15-11-2024'
+  },
   '400': {
     name: 'KAJALPREET KAUR',
     pdfPath: '/certificates/KAJALPREET KAUR DCA.pdf',

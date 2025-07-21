@@ -359,33 +359,8 @@ const ContactPage = () => {
       </div>
 
       {/* Call to Action Section */}
-      <div className="bg-gradient-to-r from-slate-900 to-slate-800 py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-            Ready to Start Your Tech Journey?
-          </h2>
-          <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-            Join hundreds of students who have transformed their careers with our expert training programs.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="https://wa.me/917340747117" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center justify-center space-x-2"
-            >
-              <Phone className="w-5 h-5" />
-              <span>WhatsApp Now</span>
-            </a>
-            <a 
-              href="/courses" 
-              className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center space-x-2"
-            >
-              <span>View Courses</span>
-            </a>
-          </div>
-        </div>
-      </div>
+     
+        
     </main>
   );
 };
