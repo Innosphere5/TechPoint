@@ -28,54 +28,6 @@ const SyllabusDownloadPage = () => {
       icon: Image,
       description: "Professional photo editing and digital design course"
     },
-    { 
-      name: "C Programming", 
-      file: "/Syllabus/C_Programming_Syllabus.pdf",
-      icon: FileText,
-      description: "Fundamental programming concepts and C language basics"
-    },
-    { 
-      name: "C++ Programming", 
-      file: "/Syllabus/CPP_Programming_Syllabus.pdf",
-      icon: FileText,
-      description: "Object-oriented programming with C++ language"
-    },
-    { 
-      name: "Java Programming", 
-      file: "/Syllabus/Java_Programming_Syllabus.pdf",
-      icon: FileText,
-      description: "Complete Java programming and application development"
-    },
-    { 
-      name: "Python Programming", 
-      file: "/Syllabus/Python_Programming_Syllabus.pdf",
-      icon: FileText,
-      description: "Modern programming with Python language"
-    },
-    { 
-      name: "Web Development", 
-      file: "/Syllabus/Web_Development_Syllabus.pdf",
-      icon: FileText,
-      description: "HTML, CSS, JavaScript and web development fundamentals"
-    },
-    { 
-      name: "MS Excel", 
-      file: "/Syllabus/MS_Excel_Syllabus.pdf",
-      icon: Calculator,
-      description: "Advanced spreadsheet skills and data analysis"
-    },
-    { 
-      name: "MS PowerPoint", 
-      file: "/Syllabus/MS_PowerPoint_Syllabus.pdf",
-      icon: FileText,
-      description: "Professional presentation design and delivery"
-    },
-    { 
-      name: "Digital Marketing", 
-      file: "/Syllabus/Digital_Marketing_Syllabus.pdf",
-      icon: Palette,
-      description: "Complete digital marketing and social media strategies"
-    },
   ];
 
   const handleDownload = async (syllabus) => {
@@ -120,7 +72,7 @@ const SyllabusDownloadPage = () => {
 
         {/* Syllabus Cards Grid */}
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"></div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-2 gap-6 sm:gap-8">
             {syllabusFiles.map((syllabus, index) => {
               const IconComponent = syllabus.icon;
               return (
