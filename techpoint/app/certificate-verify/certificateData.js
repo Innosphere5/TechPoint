@@ -2,6 +2,12 @@
 // Certificate database mapping registration numbers to PDF files
 
 export const certificateDatabase = {
+  '691': {
+    name: 'Jaspreet Singh',
+    pdfPath: '/certificates/jass CERT.pdf',
+    course: 'Digital Computer Application',
+    issueDate: '15-08-2025'
+  },
   '690': {
     name: 'GURWINDER',
     pdfPath: '/certificates/GURWINDER.pdf',

@@ -171,7 +171,7 @@ const Navbar = () => {
               <Link 
                 href="/certificate-verify"
                 onClick={closeMobileMenu}
-                className="w-full bg-[#6C63FF] text-white px-6 py3 rounded-lg font-medium font-montserrat hover:bg-[#5b54e6] transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 inline-block text-center"
+                className="w-full bg-[#6C63FF] text-white px-6 py-4 rounded-lg font-medium font-montserrat hover:bg-[#5b54e6] transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 inline-block text-center"
               >
                 Certificate-verify
               </Link>

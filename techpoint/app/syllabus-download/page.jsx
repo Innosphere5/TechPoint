@@ -1,6 +1,6 @@
 "use client"
 import React from "react";
-import { Download, FileText, Palette, Calculator, Image } from "lucide-react";
+import { Download, FileText, Palette, Calculator, Image, Terminal, Code2, Database } from "lucide-react";
 
 const SyllabusDownloadPage = () => {
   const syllabusFiles = [
@@ -28,6 +28,24 @@ const SyllabusDownloadPage = () => {
       icon: Image,
       description: "Professional photo editing and digital design course"
     },
+    { 
+      name: "Excel", 
+      file: "/Syllabus/excel.pdf",
+      icon: Database,
+      description: "Professional Excel syllabus"
+    },
+    { 
+      name: "C language", 
+      file: "/Syllabus/c.pdf",
+      icon: Terminal,
+      description: "Complete c programming language course"
+    },
+    { 
+      name: "C++ language", 
+      file: "/Syllabus/cpp.pdf",
+      icon: Code2,
+      description: "Complete c++ programming language course"
+    },
   ];
 
   const handleDownload = async (syllabus) => {
@@ -54,10 +72,10 @@ const SyllabusDownloadPage = () => {
   };
 
   return (
-    <main className="pt-10 sm:pt-20 min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50">
+    <main className=" min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
         {/* Header Section */}
-        <div className="text-center mb-12 sm:mb-16">
+        <div className="text-center mb-1 sm:mb-10">
           <div className="relative inline-block mb-4 sm:mb-6">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 leading-tight font-sans">
               Download Your Course 

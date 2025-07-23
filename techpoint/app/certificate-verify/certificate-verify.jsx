@@ -74,7 +74,7 @@ const CertificateVerify = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 relative overflow-hidden">
+    <div className="">
       {/* Main Content */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 ">
         {/* Main Card */}
