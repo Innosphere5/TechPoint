@@ -2,6 +2,38 @@
 // Certificate database mapping registration numbers to PDF files
 
 export const certificateDatabase = {
+
+  '646': {
+    name: 'Mohit kumar',
+    pdfPath: '/certificates/MOHIT BROTHER N.pdf',
+    course: 'Digital Computer Application (1 year)',
+    issueDate: '15-8-2023'
+  },
+  
+  '650': {
+    name: 'Manju',
+    pdfPath: '/certificates/MANJU CERTIFICATE.pdf',
+    course: 'Digital Computer Application (6 months)',
+    issueDate: '15-6-2024'
+  },
+  '659': {
+    name: 'Simran Sharma',
+    pdfPath: '/certificates/simran.pdf',
+    course: 'Digital Computer Application (1 year)',
+    issueDate: '15-1-2022'
+  },
+  '660': {
+    name: 'Manjot Singh',
+    pdfPath: '/certificates/MANJOT SINGH.pdf',
+    course: 'Digital Computer Application (6 months)',
+    issueDate: '10-7-2025'
+  },
+  '694': {
+    name: 'Amandeep Singh',
+    pdfPath: '/certificates/AMANDEEP SINGH123.pdf',
+    course: 'Digital Computer Application (6 months)',
+    issueDate: '15-6-2023'
+  },
   '691': {
     name: 'Jaspreet Singh',
     pdfPath: '/certificates/jass CERT.pdf',
@@ -13,6 +45,12 @@ export const certificateDatabase = {
     pdfPath: '/certificates/GURWINDER.pdf',
     course: 'Digital Computer Application',
     issueDate: '15-06-2025'
+  },
+  '649': {
+    name: 'Sukhjinder Singh',
+    pdfPath: '/certificates/SUKHJINDER SINGH.pdf',
+    course: 'Digital Computer Application (1 year)',
+    issueDate: '15-08-2024'
   },
   '651': {
     name: 'JASPREET KAUR',
