@@ -18,26 +18,32 @@ export const certificateDatabase = {
   '646': {
     name: 'Mohit kumar',
     pdfPath: '/certificates/MOHIT BROTHER N.pdf',
-    course: 'Digital Computer Application (1 year)',
+    course: 'Digital Computer Application',
     issueDate: '15-8-2023'
   },
-  
   '650': {
+    name: 'Tarun Vaid',
+    pdfPath: '/certificates/TARUN VAID.pdf',
+    course: 'Digital Computer Application',
+    issueDate: '15-1-2025'
+  },
+  
+  '671': {
     name: 'Manju',
-    pdfPath: '/certificates/MANJU CERTIFICATE.pdf',
-    course: 'Digital Computer Application (6 months)',
+    pdfPath: '/certificates/MANJU CERT1.pdf',
+    course: 'Digital Computer Application',
     issueDate: '15-6-2024'
   },
   '659': {
     name: 'Simran Sharma',
     pdfPath: '/certificates/simran.pdf',
-    course: 'Digital Computer Application (1 year)',
+    course: 'Digital Computer Application ',
     issueDate: '15-1-2022'
   },
   '660': {
     name: 'Manjot Singh',
     pdfPath: '/certificates/MANJOT SINGH.pdf',
-    course: 'Digital Computer Application (6 months)',
+    course: 'Digital Computer Application ',
     issueDate: '10-7-2025'
   },
   '694': {
