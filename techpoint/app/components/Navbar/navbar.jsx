@@ -57,6 +57,13 @@ const Navbar = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6C63FF] transition-all duration-200 group-hover:w-full"></span>
               </Link>
               <Link 
+                href="/quiz-test" 
+                className="text-gray-700 hover:text-[#6C63FF] font-medium font-montserrat transition-colors duration-200 relative group"
+              >
+                Quiz Test
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6C63FF] transition-all duration-200 group-hover:w-full"></span>
+              </Link>
+              <Link 
                 href="/contact" 
                 className="text-gray-700 hover:text-[#6C63FF] font-medium font-montserrat transition-colors duration-200 relative group"
               >
@@ -149,6 +156,16 @@ const Navbar = () => {
                   className="flex items-center px-4 py-3 text-gray-700 hover:text-[#6C63FF] hover:bg-purple-50 font-medium font-montserrat rounded-lg transition-all duration-200 group"
                 >
                   <span className="flex-1">Syllabus Download</span>
+                  <svg className="w-4 h-4 text-gray-400 group-hover:text-[#6C63FF] transform group-hover:translate-x-1 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+                <Link 
+                  href="/quiz-test" 
+                  onClick={closeMobileMenu}
+                  className="flex items-center px-4 py-3 text-gray-700 hover:text-[#6C63FF] hover:bg-purple-50 font-medium font-montserrat rounded-lg transition-all duration-200 group"
+                >
+                  <span className="flex-1">Quiz Test</span>
                   <svg className="w-4 h-4 text-gray-400 group-hover:text-[#6C63FF] transform group-hover:translate-x-1 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>

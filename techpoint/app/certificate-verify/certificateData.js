@@ -30,7 +30,7 @@ export const certificateDatabase = {
   
   '671': {
     name: 'Manju',
-    pdfPath: '/certificates/MANJU CERT1.pdf',
+    pdfPath: '/certificates/MANJU CERT 1.pdf',
     course: 'Digital Computer Application',
     issueDate: '15-6-2024'
   },
