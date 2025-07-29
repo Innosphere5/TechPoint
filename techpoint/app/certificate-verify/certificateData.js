@@ -6,8 +6,20 @@ export const certificateDatabase = {
   '597': {
     name: 'Prabhdeep Singh',
     pdfPath: '/certificates/prabhdeep singh.pdf',
-    course: 'Digital Computer Application (1 year)',
+    course: 'Digital Computer Application ',
     issueDate: '10-7-2025'
+  },
+  '692': {
+    name: 'Manpreet kaur',
+    pdfPath: '/certificates/MANPREET KAUR.pdf',
+    course: 'Digital Computer Application ',
+    issueDate: '10-7-2025'
+  },
+  '680': {
+    name: 'Samneet Garg',
+    pdfPath: '/certificates/SAMNEET GARG.pdf',
+    course: 'Digital Computer Application',
+    issueDate: '10-6-2021'
   },
   '661': {
     name: 'Nagma Salmani',
