@@ -9,6 +9,24 @@ export const certificateDatabase = {
     course: 'Digital Computer Application ',
     issueDate: '10-7-2025'
   },
+  '687': {
+    name: 'Rupanshi ',
+    pdfPath: '/certificates/RUPANSI CERT.pdf',
+    course: 'Digital Computer Application ',
+    issueDate: '10-6-2025'
+  },
+  '688': {
+    name: 'Jashanpreet kaur ',
+    pdfPath: '/certificates/jashan.pdf',
+    course: 'Digital Computer Application ',
+    issueDate: '10-6-2025'
+  },
+  '689': {
+    name: 'Diksha Rani',
+    pdfPath: '/certificates/DIKSHA11.pdf',
+    course: 'Digital Computer Application ',
+    issueDate: '10-6-2025'
+  },
   '654': {
     name: 'Raman malhotra',
     pdfPath: '/certificates/Raman.pdf',

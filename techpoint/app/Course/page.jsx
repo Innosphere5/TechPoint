@@ -257,11 +257,11 @@ const TechPointCourses = () => {
         }
 
         .animate-scroll {
-          animation: scroll 25s linear infinite;
+          animation: scroll 5s linear infinite;
         }
 
         .animate-pause {
-          animation-play-state: paused;
+          animation-play-state: continued;
         }
       `}</style>
     </div>
