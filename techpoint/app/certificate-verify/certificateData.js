@@ -69,7 +69,12 @@ export const certificateDatabase = {
     course: 'Digital Computer Application',
     issueDate: '15-1-2025'
   },
-  
+  '678': {
+    name: 'Mehak',
+    pdfPath: '/certificates/MEHAK.pdf',
+    course: 'Digital Computer Application',
+    issueDate: '19-7-2025'
+  },
   '671': {
     name: 'Manju',
     pdfPath: '/certificates/MANJU CERT 1.pdf',
@@ -204,3 +209,5 @@ export const downloadCertificate = async (certificateData) => {
     throw new Error('Failed to download certificate. Please try again.');
   }
 };
+
+
