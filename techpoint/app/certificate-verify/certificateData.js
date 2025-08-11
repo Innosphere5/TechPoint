@@ -45,6 +45,12 @@ export const certificateDatabase = {
     course: 'Digital Computer Application ',
     issueDate: '10-7-2025'
   },
+  '682': {
+    name: 'Bhavar dhiman',
+    pdfPath: '/certificates/bhavar dhiman.pdf',
+    course: 'Digital Computer Application',
+    issueDate: '19-5-2025'
+  },
   '680': {
     name: 'Samneet Garg',
     pdfPath: '/certificates/SAMNEET GARG.pdf',
