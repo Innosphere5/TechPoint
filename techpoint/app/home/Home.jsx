@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import hero from "../images/hero3.png"
+import hero from "../images/hero.png"
 import Link from "next/link"
 
 const Home = () => {
