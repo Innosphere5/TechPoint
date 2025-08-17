@@ -143,7 +143,7 @@ const CertificateVerify = () => {
                       className="w-full relative overflow-hidden group"
                     >
                       <div className="absolute inset-0 bg-[#6C63FF] rounded-xl opacity-100 group-hover:opacity-90 transition duration-300"></div>
-                      
+
 
                       <div className="relative px-8 py-4 text-white font-semibold text-lg rounded-xl flex items-center justify-center space-x-3 transform group-hover:scale-105 transition-transform duration-200">
                         {isVerifying ? (
@@ -185,14 +185,6 @@ const CertificateVerify = () => {
                         <div className="flex justify-between items-center">
                           <span className="text-gray-600 font-medium">Student Name:</span>
                           <span className="text-gray-800 font-bold">{certificateData?.name}</span>
-                        </div>
-                        <div className="flex justify-between items-center">
-                          <span className="text-gray-600 font-medium">Course:</span>
-                          <span className="text-gray-800 font-bold">{certificateData?.course}</span>
-                        </div>
-                        <div className="flex justify-between items-center">
-                          <span className="text-gray-600 font-medium">Issue Date:</span>
-                          <span className="text-gray-800 font-bold">{certificateData?.issueDate}</span>
                         </div>
                         <div className="flex justify-between items-center">
                           <span className="text-gray-600 font-medium">Registration No:</span>

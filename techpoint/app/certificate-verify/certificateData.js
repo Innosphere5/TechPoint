@@ -5,237 +5,159 @@ export const certificateDatabase = {
 
   '713': {
     name: 'Sandeep kaur',
-    pdfPath: '/certificates/sandeep.pdf',
-    course: 'Diploma in Computer Application ',
-    issueDate: '10-8-2024'
+    pdfPath: '/certificates/sandeep.pdf'
   },
   '712': {
     name: 'Praneet kaur',
-    pdfPath: '/certificates/praneet.pdf',
-    course: 'Diploma in Computer Application ',
-    issueDate: '10-7-2024'
+    pdfPath: '/certificates/praneet.pdf'
   },
   '711': {
     name: 'Harpreet kaur',
-    pdfPath: '/certificates/nirmal.pdf',
-    course: 'Diploma in Computer Application ',
-    issueDate: '10-7-2024'
+    pdfPath: '/certificates/nirmal.pdf'
   },
   '705': {
     name: 'Nirmal Singh',
-    pdfPath: '/certificates/nirmal.pdf',
-    course: 'Diploma in Computer Application ',
-    issueDate: '26-1-2023'
+    pdfPath: '/certificates/nirmal.pdf'
   },
   '706': {
     name: 'Manpreet kaur',
-    pdfPath: '/certificates/MANPREET KAUR1 (1).pdf',
-    course: 'Diploma in Computer Application ',
-    issueDate: '19-11-2024'
+    pdfPath: '/certificates/MANPREET KAUR1 (1).pdf'
   },
   '648': {
     name: 'Mehak kaur',
-    pdfPath: '/certificates/MEHAK KAUR.pdf',
-    course: 'Diploma in Computer Application ',
-    issueDate: '19-11-2024'
+    pdfPath: '/certificates/MEHAK KAUR.pdf'
   },
   '708': {
     name: 'Simarjit kaur',
-    pdfPath: '/certificates/SIMARJIT KAUR1.pdf',
-    course: 'Diploma in Computer Application ',
-    issueDate: '10-7-2025'
+    pdfPath: '/certificates/SIMARJIT KAUR1.pdf'
   },
   '707': {
     name: 'Manjot kaur',
-    pdfPath: '/certificates/MANJOT KAUR.pdf',
-    course: 'Diploma in Computer Application ',
-    issueDate: '10-7-2025'
+    pdfPath: '/certificates/MANJOT KAUR.pdf'
   },
   '695': {
     name: 'Simranjeet kaur',
-    pdfPath: '/certificates/simranjeet.pdf',
-    course: 'Diploma in Computer Application ',
-    issueDate: '15-5-2024'
+    pdfPath: '/certificates/simranjeet.pdf'
   },
   '710': {
     name: 'Anureet kaur',
-    pdfPath: '/certificates/Anureet kaur certificate.pdf',
-    course: 'Diploma in Computer Application ',
-    issueDate: '10-7-2025'
+    pdfPath: '/certificates/Anureet kaur certificate.pdf'
   },
   '597': {
     name: 'Prabhdeep Singh',
-    pdfPath: '/certificates/prabhdeep singh.pdf',
-    course: 'Diploma Computer Application ',
-    issueDate: '10-7-2025'
+    pdfPath: '/certificates/prabhdeep singh.pdf'
   },
   '599': {
     name: 'Navjot Singh',
-    pdfPath: '/certificates/navjot singh.pdf',
-    course: 'Diploma Computer Application ',
-    issueDate: '10-1-2025'
+    pdfPath: '/certificates/navjot singh.pdf'
   },
   '687': {
     name: 'Rupanshi ',
-    pdfPath: '/certificates/RUPANSI CERT.pdf',
-    course: 'Diploma Computer Application ',
-    issueDate: '10-6-2025'
+    pdfPath: '/certificates/RUPANSI CERT.pdf'
   },
   '688': {
     name: 'Jashanpreet kaur ',
-    pdfPath: '/certificates/jashan.pdf',
-    course: 'Diploma Computer Application ',
-    issueDate: '10-6-2025'
+    pdfPath: '/certificates/jashan.pdf'
   },
   '689': {
     name: 'Diksha Rani',
-    pdfPath: '/certificates/DIKSHA11.pdf',
-    course: 'Diploma in Computer Application ',
-    issueDate: '10-6-2025'
+    pdfPath: '/certificates/DIKSHA11.pdf'
   },
   '654': {
     name: 'Raman malhotra',
-    pdfPath: '/certificates/Raman.pdf',
-    course: 'Diploma in Computer Application ',
-    issueDate: '10-1-2021'
+    pdfPath: '/certificates/Raman.pdf'
   },
   '692': {
     name: 'Manpreet kaur',
-    pdfPath: '/certificates/MANPREET KAUR.pdf',
-    course: 'Diploma in  Computer Application ',
-    issueDate: '10-7-2025'
+    pdfPath: '/certificates/MANPREET KAUR.pdf'
   },
   '682': {
     name: 'Bhavar dhiman',
-    pdfPath: '/certificates/bhavar.pdf',
-    course: 'Diploma in Computer Application',
-    issueDate: '19-5-2025'
+    pdfPath: '/certificates/bhavar.pdf'
   },
   '680': {
     name: 'Samneet Garg',
-    pdfPath: '/certificates/SAMNEET GARG.pdf',
-    course: 'Diploma in Computer Application',
-    issueDate: '10-6-2021'
+    pdfPath: '/certificates/SAMNEET GARG.pdf'
   },
   '661': {
     name: 'Nagma Salmani',
-    pdfPath: '/certificates/NAGMA CERTIFICATE N.pdf',
-    course: 'Diploma in Computer Application (1 year)',
-    issueDate: '15-6-2025'
+    pdfPath: '/certificates/NAGMA CERTIFICATE N.pdf'
   },
   '646': {
     name: 'Mohit kumar',
-    pdfPath: '/certificates/MOHIT BROTHER N.pdf',
-    course: 'Diploma in Computer Application',
-    issueDate: '15-8-2023'
+    pdfPath: '/certificates/MOHIT BROTHER N.pdf'
   },
   '650': {
     name: 'Tarun Vaid',
-    pdfPath: '/certificates/TARUN VAID.pdf',
-    course: 'Diploma in Computer Application',
-    issueDate: '15-1-2025'
+    pdfPath: '/certificates/TARUN VAID.pdf'
   },
   '678': {
     name: 'Mehak',
-    pdfPath: '/certificates/MEHAK.pdf',
-    course: 'Diploma in Computer Application',
-    issueDate: '19-7-2025'
+    pdfPath: '/certificates/MEHAK.pdf'
   },
   '671': {
     name: 'Manju',
-    pdfPath: '/certificates/MANJU CERT 1.pdf',
-    course: 'Diploma in Computer Application',
-    issueDate: '15-6-2024'
+    pdfPath: '/certificates/MANJU CERT 1.pdf'
   },
   '659': {
     name: 'Simran Sharma',
-    pdfPath: '/certificates/simran.pdf',
-    course: 'Diploma in Computer Application ',
-    issueDate: '15-1-2022'
+    pdfPath: '/certificates/simran.pdf'
   },
   '660': {
     name: 'Manjot Singh',
-    pdfPath: '/certificates/MANJOT SINGH.pdf',
-    course: 'Diploma in Computer Application ',
-    issueDate: '10-7-2025'
+    pdfPath: '/certificates/MANJOT SINGH.pdf'
   },
   '694': {
     name: 'Amandeep Singh',
-    pdfPath: '/certificates/AMANDEEP SINGH123.pdf',
-    course: 'Diploma in Computer Application (6 months)',
-    issueDate: '15-6-2023'
+    pdfPath: '/certificates/AMANDEEP SINGH123.pdf'
   },
   '691': {
     name: 'Jaspreet Singh',
-    pdfPath: '/certificates/jass CERT.pdf',
-    course: 'Diploma in Computer Application',
-    issueDate: '15-08-2025'
+    pdfPath: '/certificates/jass CERT.pdf'
   },
   '690': {
     name: 'GURWINDER',
-    pdfPath: '/certificates/GURWINDER.pdf',
-    course: 'Diploma in Computer Application',
-    issueDate: '15-06-2025'
+    pdfPath: '/certificates/GURWINDER.pdf'
   },
   '649': {
     name: 'Sukhjinder Singh',
-    pdfPath: '/certificates/SUKHJINDER SINGH.pdf',
-    course: 'Diploma in Computer Application (1 year)',
-    issueDate: '15-08-2024'
+    pdfPath: '/certificates/SUKHJINDER SINGH.pdf'
   },
   '651': {
     name: 'JASPREET KAUR',
-    pdfPath: '/certificates/JASPREET KAUR.pdf',
-    course: 'Diploma in Computer Application',
-    issueDate: '10-01-2025'
+    pdfPath: '/certificates/JASPREET KAUR.pdf'
   },
   '655': {
     name: 'Kiranjot Kaur',
-    pdfPath: '/certificates/KIRANJOT.pdf',
-    course: 'Diploma in Computer Application',
-    issueDate: '05-01-2024'
+    pdfPath: '/certificates/KIRANJOT.pdf'
   },
   '658': {
     name: 'Maninder Kaur',
-    pdfPath: '/certificates/maninder kaur.pdf',
-    course: 'Diploma in Computer Application',
-    issueDate: '05-04-2025'
+    pdfPath: '/certificates/maninder kaur.pdf'
   },
   '656': {
     name: 'Navdeep Singh',
-    pdfPath: '/certificates/NAVDEEP SINGH.pdf',
-    course: 'Diploma in Computer Application',
-    issueDate: '15-11-2024'
+    pdfPath: '/certificates/NAVDEEP SINGH.pdf'
   },
   '400': {
     name: 'KAJALPREET KAUR',
-    pdfPath: '/certificates/KAJALPREET KAUR DCA.pdf',
-    course: 'Diploma in Computer Application',
-    issueDate: '10-01-2020'
+    pdfPath: '/certificates/KAJALPREET KAUR DCA.pdf'
   },
   '652': {
     name: 'KARMANJOT',
-    pdfPath: '/certificates/KARMANJOT.pdf',
-    course: 'Diploma in Computer Application',
-    issueDate: '10-01-2023'
+    pdfPath: '/certificates/KARMANJOT.pdf'
   },
   '401': {
     name: 'SPOKEN ENGLISH STUDENT',
-    pdfPath: '/certificates/SPOKEN.pdf',
-    course: 'Spoken English',
-    issueDate: '10-01-2021'
+    pdfPath: '/certificates/SPOKEN.pdf'
   },
   '653': {
     name: 'YASHKARAN',
-    pdfPath: '/certificates/YASHKARAN1.pdf',
-    course: 'Diploma in Computer Application',
-    issueDate: '10-01-2023'
+    pdfPath: '/certificates/YASHKARAN1.pdf'
   },
   '13': {
     name: 'TEACHING EXPERIENCE',
-    pdfPath: '/certificates/teaching experience cert - Copy.pdf',
-    course: 'Teaching Experience Certificate',
-    issueDate: '10-01-2022'
+    pdfPath: '/certificates/teaching experience cert - Copy.pdf'
   }
 };
 
@@ -275,5 +197,3 @@ export const downloadCertificate = async (certificateData) => {
     throw new Error('Failed to download certificate. Please try again.');
   }
 };
-
-
