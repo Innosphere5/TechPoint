@@ -3,6 +3,30 @@
 
 export const certificateDatabase = {
 
+  '713': {
+    name: 'Sandeep kaur',
+    pdfPath: '/certificates/sandeep.pdf',
+    course: 'Diploma in Computer Application ',
+    issueDate: '10-8-2024'
+  },
+  '712': {
+    name: 'Praneet kaur',
+    pdfPath: '/certificates/praneet.pdf',
+    course: 'Diploma in Computer Application ',
+    issueDate: '10-7-2024'
+  },
+  '711': {
+    name: 'Harpreet kaur',
+    pdfPath: '/certificates/nirmal.pdf',
+    course: 'Diploma in Computer Application ',
+    issueDate: '10-7-2024'
+  },
+  '705': {
+    name: 'Nirmal Singh',
+    pdfPath: '/certificates/nirmal.pdf',
+    course: 'Diploma in Computer Application ',
+    issueDate: '26-1-2023'
+  },
   '706': {
     name: 'Manpreet kaur',
     pdfPath: '/certificates/MANPREET KAUR1 (1).pdf',
@@ -33,9 +57,9 @@ export const certificateDatabase = {
     course: 'Diploma in Computer Application ',
     issueDate: '15-5-2024'
   },
-  '705': {
+  '710': {
     name: 'Anureet kaur',
-    pdfPath: '/certificates/Anureet kaur1.pdf',
+    pdfPath: '/certificates/Anureet kaur certificate.pdf',
     course: 'Diploma in Computer Application ',
     issueDate: '10-7-2025'
   },
@@ -83,7 +107,7 @@ export const certificateDatabase = {
   },
   '682': {
     name: 'Bhavar dhiman',
-    pdfPath: '/certificates/bhavar dhiman.pdf',
+    pdfPath: '/certificates/bhavar.pdf',
     course: 'Diploma in Computer Application',
     issueDate: '19-5-2025'
   },
