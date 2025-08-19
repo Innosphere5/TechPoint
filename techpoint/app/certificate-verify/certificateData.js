@@ -21,11 +21,15 @@ export const certificateDatabase = {
   },
   '711': {
     name: 'Harpreet kaur',
-    pdfPath: '/certificates/nirmal.pdf'
+    pdfPath: '/certificates/harpreet.pdf'
   },
   '705': {
     name: 'Nirmal Singh',
     pdfPath: '/certificates/nirmal.pdf'
+  },
+  '704': {
+    name: 'Amritpal Singh',
+    pdfPath: '/certificates/amritpal.pdf'
   },
   '706': {
     name: 'Manpreet kaur',
