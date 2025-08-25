@@ -26,7 +26,7 @@ const Home = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link 
                 href="/certificate-verify"
-                className="bg-[#6C63FF] text-white px-8 py-4 rounded-lg font-semibold font-montserrat hover:bg-[#5b54e6] transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center"
+                className="bg-[#6C63FF] text-white px-8 py-4.5 rounded-lg font-semibold font-montserrat hover:bg-[#5b54e6] transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center"
               >
                 Certificate-verify
               </Link>
