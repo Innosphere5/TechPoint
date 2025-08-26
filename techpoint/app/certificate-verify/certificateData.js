@@ -3,7 +3,18 @@
 
 export const certificateDatabase = {
 
-
+  '756': {
+    name: 'Gurpreet Singh',
+    pdfPath: '/certificates/gurpreet singh cert.pdf'
+  },
+  '759': {
+    name: 'Jatin Kumar',
+    pdfPath: '/certificates/JATIN CERT1.pdf'
+  },
+  '754': {
+    name: 'Manpreet kaur',
+    pdfPath: '/certificates/MANPREET CERTIFICATE.pdf'
+  },
   '757': {
     name: 'Taniya',
     pdfPath: '/certificates/TANIYA DCA.pdf'
