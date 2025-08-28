@@ -2,7 +2,11 @@
 // Certificate database mapping registration numbers to PDF files
 
 export const certificateDatabase = {
-
+  
+  '720': {
+    name: 'Paranvir Singh',
+    pdfPath: '/certificates/paranvir singh.pdf'
+  },
   '756': {
     name: 'Gurpreet Singh',
     pdfPath: '/certificates/gurpreet singh cert.pdf'
