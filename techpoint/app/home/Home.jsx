@@ -1,8 +1,10 @@
 "use client"
 import Image from 'next/image';
-import hero from "../images/hero.png"
 import logo1 from "../images/logo1.png"
 import logo2 from "../images/logo2.png"
+import cert1 from "../images/cert1.jpg"
+import cert2 from "../images/cert2.png"
+import cert3 from "../images/cert3.jpg"
 import Link from "next/link"
 import { useState, useEffect } from 'react';
 
@@ -92,7 +94,7 @@ const Home = () => {
                 <span className="relative z-10">Certificate Verify</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20 transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
               </Link>
-           
+
             </div>
 
             {/* Footer Logos - Mobile Layout */}
@@ -135,32 +137,62 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Right Hero Image - Desktop Layout */}
-          <div className="relative hidden md:block">
-            <div className="relative z-10">
-              <Image
-                src={hero}
-                alt="Techpoint Education Hero"
-                width={600}
-                height={450}
-                className="w-full h-auto max-w-lg mx-auto transform hover:scale-105 transition-transform duration-500 drop-shadow-2xl"
-                priority
-              />
+          {/* Right Certificate Section - Desktop Layout */}
+          <div className="relative hidden md:block mt-10">
+            <div className="relative h-96 w-full flex items-center justify-center">
+              {/* Certificate 1 - Center */}
+              <div className="absolute z-30 transform hover:scale-105 transition-all duration-500 cursor-pointer">
+                <div className="bg-white p-2 rounded-xl shadow-2xl">
+                  <Image
+                    src={cert1}
+                    alt="Certificate 1"
+                    width={280}
+                    height={200}
+                    className="rounded-lg object-cover shadow-lg"
+                  />
+                </div>
+              </div>
 
-              {/* Floating Cards around Image */}
-              <div className="absolute -top-4 -left-4 bg-white p-3 rounded-lg shadow-lg animate-float border border-purple-100">
+              {/* Certificate 2 - Left side (rotated 30 degrees) */}
+              <div className="absolute z-20 transform rotate-[-30deg] translate-x-32 translate-y-12 hover:scale-105 hover:rotate-[-25deg] transition-all duration-500 cursor-pointer">
+                <div className="bg-white p-2 rounded-xl shadow-xl">
+                  <Image
+                    src={cert2}
+                    alt="Certificate 2"
+                    width={240}
+                    height={170}
+                    className="rounded-lg object-cover shadow-lg"
+                  />
+                </div>
+              </div>
+
+              {/* Certificate 3 - Right side (rotated -30 degrees) */}
+              <div className="absolute z-20 transform rotate-[30deg] -translate-x-32 -translate-y-12 hover:scale-105 hover:rotate-[25deg] transition-all duration-500 cursor-pointer">
+                <div className="bg-white p-2 rounded-xl shadow-xl">
+                  <Image
+                    src={cert3}
+                    alt="Certificate 3"
+                    width={240}
+                    height={170}
+                    className="rounded-lg object-cover shadow-lg"
+                  />
+                </div>
+              </div>
+
+              {/* Floating Cards around Certificates */}
+              <div className="absolute -top-4 -left-4 bg-white p-3 rounded-lg shadow-lg animate-float border border-purple-100 z-40">
                 <div className="text-sm font-semibold text-[#6C63FF]">💻 Digital Skills</div>
               </div>
-              <div className="absolute top-10 -right-6 bg-white p-3 rounded-lg shadow-lg animate-float-delayed border border-red-100">
+              <div className="absolute top-10 -right-6 bg-white p-3 rounded-lg shadow-lg animate-float-delayed border border-red-100 z-40">
                 <div className="text-sm font-semibold text-red-500">🎨 Creative Arts</div>
               </div>
-              <div className="absolute -bottom-2 left-8 bg-white p-3 rounded-lg shadow-lg animate-float border border-purple-100">
+              <div className="absolute -bottom-2 left-8 bg-white p-3 rounded-lg shadow-lg animate-float border border-purple-100 z-40">
                 <div className="text-sm font-semibold text-[#6C63FF]">📊 IT knowledge</div>
               </div>
             </div>
 
             {/* Footer Logos - Desktop Layout */}
-            <div className="flex justify-center items-center gap-8 mt-1">
+            <div className="flex justify-center items-center gap-8 mt-20">
               <div className="relative">
                 <Image
                   src={logo1}
