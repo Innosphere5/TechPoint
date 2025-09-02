@@ -13,6 +13,7 @@ const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [certificatesLoaded, setCertificatesLoaded] = useState(false);
 
   const texts = ['DCA', 'Programming', 'Tally', 'Photoshop',];
 
@@ -37,6 +38,14 @@ const Home = () => {
 
     return () => clearTimeout(timer);
   }, [currentText, currentIndex, charIndex, isDeleting, texts]);
+
+  // Trigger certificate animations after component mounts
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setCertificatesLoaded(true);
+    }, 500);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className="min-h-screen bg-white relative">
@@ -140,8 +149,12 @@ const Home = () => {
           {/* Right Certificate Section - Desktop Layout */}
           <div className="relative hidden md:block mt-10">
             <div className="relative h-96 w-full flex items-center justify-center">
-              {/* Certificate 1 - Center */}
-              <div className="absolute z-30 transform hover:scale-105 transition-all duration-500 cursor-pointer">
+              {/* Certificate 1 - Center (drops from top) */}
+              <div className={`absolute z-30 transform transition-all duration-1000 ease-out cursor-pointer hover:scale-105 hover:z-50 ${
+                certificatesLoaded 
+                  ? 'translate-y-0 opacity-100' 
+                  : '-translate-y-96 opacity-0'
+              }`}>
                 <div className="bg-white p-2 rounded-xl shadow-2xl">
                   <Image
                     src={cert1}
@@ -153,8 +166,12 @@ const Home = () => {
                 </div>
               </div>
 
-              {/* Certificate 2 - Left side (rotated 30 degrees) */}
-              <div className="absolute z-20 transform rotate-[-30deg] translate-x-32 translate-y-12 hover:scale-105 hover:rotate-[-25deg] transition-all duration-500 cursor-pointer">
+              {/* Certificate 2 - Left side (slides from left) */}
+              <div className={`absolute z-20 transform rotate-[-30deg] translate-x-32 translate-y-12 transition-all duration-1200 delay-300 ease-out cursor-pointer hover:scale-105 hover:rotate-[-25deg] hover:z-50 ${
+                certificatesLoaded 
+                  ? 'translate-x-32 opacity-100' 
+                  : '-translate-x-96 opacity-0'
+              }`}>
                 <div className="bg-white p-2 rounded-xl shadow-xl">
                   <Image
                     src={cert2}
@@ -166,8 +183,12 @@ const Home = () => {
                 </div>
               </div>
 
-              {/* Certificate 3 - Right side (rotated -30 degrees) */}
-              <div className="absolute z-20 transform rotate-[30deg] -translate-x-32 -translate-y-12 hover:scale-105 hover:rotate-[25deg] transition-all duration-500 cursor-pointer">
+              {/* Certificate 3 - Right side (slides from right) */}
+              <div className={`absolute z-20 transform rotate-[30deg] -translate-x-32 -translate-y-12 transition-all duration-1200 delay-600 ease-out cursor-pointer hover:scale-105 hover:rotate-[25deg] hover:z-50 ${
+                certificatesLoaded 
+                  ? '-translate-x-32 opacity-100' 
+                  : 'translate-x-96 opacity-0'
+              }`}>
                 <div className="bg-white p-2 rounded-xl shadow-xl">
                   <Image
                     src={cert3}
@@ -179,14 +200,20 @@ const Home = () => {
                 </div>
               </div>
 
-              {/* Floating Cards around Certificates */}
-              <div className="absolute -top-4 -left-4 bg-white p-3 rounded-lg shadow-lg animate-float border border-purple-100 z-40">
+              {/* Floating Cards around Certificates with staggered entrance */}
+              <div className={`absolute -top-4 -left-4 bg-white p-3 rounded-lg shadow-lg animate-float border border-purple-100 z-40 transition-all duration-800 delay-1000 ${
+                certificatesLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
+              }`}>
                 <div className="text-sm font-semibold text-[#6C63FF]">💻 Digital Skills</div>
               </div>
-              <div className="absolute top-10 -right-6 bg-white p-3 rounded-lg shadow-lg animate-float-delayed border border-red-100 z-40">
+              <div className={`absolute top-10 -right-6 bg-white p-3 rounded-lg shadow-lg animate-float-delayed border border-red-100 z-40 transition-all duration-800 delay-1200 ${
+                certificatesLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
+              }`}>
                 <div className="text-sm font-semibold text-red-500">🎨 Creative Arts</div>
               </div>
-              <div className="absolute -bottom-2 left-8 bg-white p-3 rounded-lg shadow-lg animate-float border border-purple-100 z-40">
+              <div className={`absolute -bottom-2 left-8 bg-white p-3 rounded-lg shadow-lg animate-float border border-purple-100 z-40 transition-all duration-800 delay-1400 ${
+                certificatesLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
+              }`}>
                 <div className="text-sm font-semibold text-[#6C63FF]">📊 IT knowledge</div>
               </div>
             </div>
