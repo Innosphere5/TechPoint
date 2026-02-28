@@ -2,6 +2,30 @@
 // Certificate database mapping registration numbers to PDF files
 
 export const certificateDatabase = {
+  738: {
+    name: "Arundeep kaur",
+    pdfPath: "/certificates/arundeep.pdf",
+  },
+  735: {
+    name: "Sahil Kumar",
+    pdfPath: "/certificates/sahil.pdf",
+  },
+  804: {
+    name: "Simran Kaur",
+    pdfPath: "/certificates/simran.pdf",
+  },
+  803: {
+    name: "Gurpreet Singh",
+    pdfPath: "/certificates/gurpreet.pdf",
+  },
+  802: {
+    name: "Priyanka Gupta",
+    pdfPath: "/certificates/priyanka.pdf",
+  },
+  797: {
+    name: "Yogesh Kumar",
+    pdfPath: "/certificates/yogesh.pdf",
+  },
   794: {
     name: "Gurleen kaur",
     pdfPath: "/certificates/gurleen.pdf",
