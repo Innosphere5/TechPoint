@@ -2,6 +2,38 @@
 // Certificate database mapping registration numbers to PDF files
 
 export const certificateDatabase = {
+  799: {
+    name: "Rishab kumar",
+    pdfPath: "/certificates/rishab.pdf",
+  },
+  760: {
+    name: "Harsh Maan",
+    pdfPath: "/certificates/harsh.pdf",
+  },
+  805: {
+    name: "Harpreet kaur",
+    pdfPath: "/certificates/harpreetkaur.pdf",
+  },
+  812: {
+    name: "Harjinder kaur",
+    pdfPath: "/certificates/harjinderkaur.pdf",
+  },
+  811: {
+    name: "Gurpinder kaur",
+    pdfPath: "/certificates/gurpinder.pdf",
+  },
+  804: {
+    name: "Amrinder Kaur",
+    pdfPath: "/certificates/amrinderkaur.pdf",
+  },
+  809: {
+    name: "Varjinder kaur",
+    pdfPath: "/certificates/varjinder.pdf",
+  },
+  810: {
+    name: "Priyanka kaur",
+    pdfPath: "/certificates/priyanka2.pdf",
+  },
   738: {
     name: "Arundeep kaur",
     pdfPath: "/certificates/arundeep.pdf",
@@ -11,7 +43,7 @@ export const certificateDatabase = {
     pdfPath: "/certificates/sahil.pdf",
   },
   804: {
-    name: "Simran Kaur",
+    name: "Simran Sharma",
     pdfPath: "/certificates/simran.pdf",
   },
   803: {
@@ -24,7 +56,7 @@ export const certificateDatabase = {
   },
   797: {
     name: "Yogesh Kumar",
-    pdfPath: "/certificates/yogesh.pdf",
+    pdfPath: "/certificates/yogeshkumar.pdf",
   },
   794: {
     name: "Gurleen kaur",
