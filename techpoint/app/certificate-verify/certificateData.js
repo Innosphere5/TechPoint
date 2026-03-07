@@ -14,6 +14,14 @@ export const certificateDatabase = {
     name: "Harpreet kaur",
     pdfPath: "/certificates/harpreetkaur.pdf",
   },
+  819: {
+    name: "Amanpreet kaur",
+    pdfPath: "/certificates/amanpreet.pdf",
+  },
+  817: {
+    name: "Rajwinder kaur",
+    pdfPath: "/certificates/rajwinder.pdf",
+  },
   812: {
     name: "Harjinder kaur",
     pdfPath: "/certificates/harjinderkaur.pdf",
@@ -141,6 +149,10 @@ export const certificateDatabase = {
   685: {
     name: "Harshdeep Singh",
     pdfPath: "/certificates/harshdeep.pdf",
+  },
+  684: {
+    name: "Gurpreet Singh",
+    pdfPath: "/certificates/Gurpreet singh.pdf",
   },
   683: {
     name: "Harpreet Singh",
