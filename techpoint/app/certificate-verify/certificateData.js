@@ -2,6 +2,22 @@
 // Certificate database mapping registration numbers to PDF files
 
 export const certificateDatabase = {
+  839: {
+    name: "Deepak maan",
+    pdfPath: "/certificates/deepak.pdf",
+  },
+  820: {
+    name: "Amandeep kaur",
+    pdfPath: "/certificates/amandeep.pdf",
+  },
+  840: {
+    name: "Mandeep kaur",
+    pdfPath: "/certificates/MANDEEP KAUR.pdf",
+  },
+  830: {
+    name: "Harshita",
+    pdfPath: "/certificates/Harshite.pdf",
+  },
   799: {
     name: "Rishab kumar",
     pdfPath: "/certificates/rishab.pdf",
@@ -389,26 +405,26 @@ export const getAllRegistrationNumbers = () => {
 // Helper function to download certificate
 export const downloadCertificate = async (certificateData) => {
   if (!certificateData) {
-    throw new Error('Certificate data is required');
+    throw new Error("Certificate data is required");
   }
 
   try {
     // First check if the file exists
     const response = await fetch(certificateData.pdfPath);
     if (!response.ok) {
-      throw new Error('Certificate file not found');
+      throw new Error("Certificate file not found");
     }
 
     // Create download link
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = certificateData.pdfPath;
-    link.download = `${certificateData.name.replace(/\s+/g, '_')}_Certificate.pdf`;
-    link.target = '_blank';
+    link.download = `${certificateData.name.replace(/\s+/g, "_")}_Certificate.pdf`;
+    link.target = "_blank";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   } catch (error) {
-    console.error('Download failed:', error);
-    throw new Error('Failed to download certificate. Please try again.');
+    console.error("Download failed:", error);
+    throw new Error("Failed to download certificate. Please try again.");
   }
 };
